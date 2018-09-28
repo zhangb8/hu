@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 //leo leo on the wall who's the fairest of them all
+//brian brian on my roof who's the biggest goofy goof
 public class BattleManager : MonoBehaviour {
+
     Enemy enemy;
     Player player;
     Sprite gameOverScreen;

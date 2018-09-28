@@ -8,14 +8,20 @@ public class Player : MonoBehaviour {
     public int health;
     public int maxMana;
     public int mana;
+    public Deck deck;
 
-
-	// Use this for initialization
-	void Start () {
+    private void Awake()
+    {
+        deck = new Deck();
         maxHealth = 100;
         health = 100;
         maxMana = 5;
         mana = 5;
+    }
+
+    // Use this for initialization
+    void Start () {
+
 	}
 	
 	// Update is called once per frame

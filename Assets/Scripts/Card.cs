@@ -9,15 +9,17 @@ public class Card : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        name = "";
-        cost = 0;
-        type = "";
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
+    string getName()
+    {
+        return name;
+    }
 
     void setName(string cardName)
     {
@@ -29,8 +31,20 @@ public class Card : MonoBehaviour {
         cost = cardCost;
     }
 
+    int getCost()
+    {
+        return cost;
+    }
+
     void setType(string cardType)
     {
         type = cardType;
     }
+
+    string getType()
+    {
+        return type;
+    }
+
+    void use() { }
 }
