@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-    int maxHealth;
-    int health;
-    int maxMana;
-    int mana;
+    public int maxHealth;
+    public int health;
+    public int maxMana;
+    public int mana;
 
 
 	// Use this for initialization

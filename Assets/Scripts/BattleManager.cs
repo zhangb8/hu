@@ -9,8 +9,6 @@ public class BattleManager : MonoBehaviour {
     Sprite victoryScreen;
 	// Use this for initialization
 	void Start () {
-        enemy enemy = new enemy();
-        player player = new player();
 	}
 	
 	// Update is called once per frame

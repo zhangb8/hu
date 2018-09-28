@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
-    int maxHealth;
-    int health;
-    int str;
-    int def;
-    int block;
+    public int maxHealth;
+    public int health;
+    public int str;
+    public int def;
+    public int block;
 
 	// Use this for initialization
 	void Start () {

@@ -10,7 +10,7 @@ public class Card : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         name = "";
-        cost = "";
+        cost = 0;
         type = "";
 	}
 	
