@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//leo leo on the wall who's the fairest of them all
 public class BattleManager : MonoBehaviour {
     Enemy enemy;
     Player player;
