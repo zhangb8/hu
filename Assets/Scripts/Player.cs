@@ -8,6 +8,7 @@ public class Player : MonoBehaviour {
     public int maxMana;
     public int mana;
     public Deck deck;
+    public Hand hand;
 
     private void Awake()
     {

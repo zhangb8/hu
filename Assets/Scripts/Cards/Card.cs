@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Card : MonoBehaviour {
-    string name;
-    int cost;
-    string type;
+    public string name;
+    public int cost;
+    public string type;
 
 	// Use this for initialization
 	void Start () {

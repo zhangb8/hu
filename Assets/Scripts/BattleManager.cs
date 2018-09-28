@@ -7,8 +7,12 @@ public class BattleManager : MonoBehaviour {
 
     public Enemy enemy;
     public Player player;
+    public Hand hand;
     public Sprite gameOverScreen;
     public Sprite victoryScreen;
+
+    public bool playerTurn = true;
+
 	// Use this for initialization
 	void Start () {
     }
