@@ -5,40 +5,34 @@ using UnityEngine;
 //brian brian on my roof who's the biggest goofy goof
 public class BattleManager : MonoBehaviour {
 
-    Enemy enemy;
-    Player player;
-    Sprite gameOverScreen;
-    Sprite victoryScreen;
+    public Enemy enemy;
+    public Player player;
+    public Sprite gameOverScreen;
+    public Sprite victoryScreen;
 	// Use this for initialization
 	void Start () {
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
 		if (enemy.health == 0)
         {
-
+            victory();
         }
 
-        if (player.health == 0)
+        else if (player.health == 0)
         {
-
+            gameOver();
         }
 	}
 
     void gameOver()
     {
-        if (player.health == 0)
-        {
 
-        }
     }
 
     void victory()
     {
-        if (enemy.health == 0)
-        {
 
-        }
     }
 }
