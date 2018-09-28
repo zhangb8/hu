@@ -3,5 +3,5 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Heal : Card {
-    int heal = 5;
+    public int heal = 5;
 }

@@ -56,4 +56,18 @@ public class Enemy : MonoBehaviour {
     {
         block += def;
     }
+
+    String Move()
+    {
+        Random rnd = new Random();
+        int moveType = rnd.Next(1, 2);
+        if (moveType == 1)
+        {
+            return "Attack";
+        }
+        else
+        {
+            return "Heal";
+        }
+    }
 }

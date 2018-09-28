@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Hand : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
+    public GameObject[] cards;
+    // Use this for initialization
+    void Start () {
 		
 	}
 	

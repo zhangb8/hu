@@ -8,6 +8,7 @@ public class BattleManager : MonoBehaviour {
     public Enemy enemy;
     public Player player;
     public Hand hand;
+    public Deck deck;
     public Sprite gameOverScreen;
     public Sprite victoryScreen;
 
@@ -21,12 +22,18 @@ public class BattleManager : MonoBehaviour {
 	void Update () {
 		if (enemy.health == 0)
         {
-            victory();
+            Victory();
         }
 
         else if (player.health == 0)
         {
             gameOver();
+        }
+
+        if (playerTurn == false)
+        {
+            enemyTurn();
+            startTurn();
         }
 	}
 
@@ -35,8 +42,58 @@ public class BattleManager : MonoBehaviour {
 
     }
 
-    void victory()
+    void Victory()
     {
 
+    }
+
+    void playCard()
+    {
+
+    }
+
+    void startFight()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            Draw();
+        }
+    }
+
+    void startTurn()
+    {
+        playerTurn = true;
+        Draw();
+    }
+
+    void endTurn()
+    {
+        playerTurn = false;
+    }
+
+    void enemyTurn()
+    {
+        string enemyMove = enemy.Move();
+        if (enemyMove.equals("Attack"))
+        {
+            player.takeDamage(enemy.str);
+        }
+        else if (enemyMove.equals("Heal"))
+        {
+            enemy.Block();
+        }
+    }
+
+    void Draw()
+    {
+        if (deck.length > 0)
+        {
+            hand.enqeue(deck[0]);
+            deck.deqeue;
+        }
+        else
+        {
+            player.health -= 1;
+        }
     }
 }
