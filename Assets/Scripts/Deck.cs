@@ -2,26 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Deck : MonoBehaviour {
+public class Deck : MonoBehaviour
+{
 
-    public Card[] cards;
+    public GameObject[] cards;
 
-	// Use this for initialization
-	void Start () {
-        cards = new Card[5];
-        FillDeck();
-	}
-
-    void FillDeck()
+    // Use this for initialization
+    void Start()
     {
-        for (int i=0; i< cards.Length; i++)
-        {
-            cards[i] = Instantiate(cards[i]) as Card;
-        }
+        cards = new GameObject[5];
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 }
