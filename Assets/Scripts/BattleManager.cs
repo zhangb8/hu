@@ -16,6 +16,7 @@ public class BattleManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        startFight();
     }
 	
 	// Update is called once per frame
@@ -47,23 +48,18 @@ public class BattleManager : MonoBehaviour {
 
     }
 
-    void playCard()
-    {
-
-    }
-
     void startFight()
     {
         for (int i = 0; i < 5; i++)
         {
-            Draw();
+            hand.Draw();
         }
     }
 
     void startTurn()
     {
         playerTurn = true;
-        Draw();
+        hand.Draw();
     }
 
     void endTurn()
@@ -84,16 +80,8 @@ public class BattleManager : MonoBehaviour {
         }
     }
 
-    void Draw()
+    void playCard()
     {
-        if (deck.length > 0)
-        {
-            hand.enqeue(deck[0]);
-            deck.deqeue;
-        }
-        else
-        {
-            player.health -= 1;
-        }
+
     }
 }

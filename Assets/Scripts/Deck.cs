@@ -10,7 +10,7 @@ public class Deck : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        cards = new GameObject[5];
+
     }
 
     // Update is called once per frame

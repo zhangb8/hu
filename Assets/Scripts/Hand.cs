@@ -13,4 +13,16 @@ public class Hand : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    void Draw()
+    {
+        if (deck.count > 0)
+        {
+            hand.enqeue(deck.deqeue);
+        }
+        else
+        {
+            player.health -= 1;
+        }
+    }
 }
