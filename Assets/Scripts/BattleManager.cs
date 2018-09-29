@@ -13,11 +13,12 @@ public class BattleManager : MonoBehaviour {
     public bool playerTurn = true;
     public GameObject[] items;
     public GameObject deck;
+
     // Use this for initialization
     void Start () {
+        Card.cardUsed += onCardUse;
         startFight();
     }
-	
 	// Update is called once per frame
 	void Update () {
 		if (enemy.health == 0)
@@ -45,6 +46,14 @@ public class BattleManager : MonoBehaviour {
     void Victory()
     {
 
+    }
+
+    void onCardUse()
+    {
+        //Technically knows which card was clicked on from the delegate/event
+        //But there's no way to access it's information - potentially in the use
+        //Function in the card class, have it send information as well
+        Card.cardUsed -= onCardUse;
     }
 
     void startFight()

@@ -7,9 +7,11 @@ public class Card : MonoBehaviour {
     public string type;
     public SpriteRenderer sprite;
     public BoxCollider2D box;
-
-	// Use this for initialization
-	void Start () {
+    public boolean wasClicked = false;
+    public delegate void cardUsedDelegate();
+    public static event cardUsedDelegate cardUsed;
+    // Use this for initialization
+    void Start () {
 	}
 	
 	// Update is called once per frame
@@ -47,7 +49,14 @@ public class Card : MonoBehaviour {
         return type;
     }
 
-    void use() { print("using " + name); }
+    public static void use() {
+        wasClicked = true;
+        if (cardUsed != null)
+        {
+            cardUsed();
+            print("using " + name);
+        }
+    }
 
     private void OnMouseUpAsButton()
     {
