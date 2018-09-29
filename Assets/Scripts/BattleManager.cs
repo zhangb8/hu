@@ -7,8 +7,6 @@ public class BattleManager : MonoBehaviour {
 
     public Enemy enemy;
     public Player player;
-    public Hand hand;
-    public Deck deck;
     public Sprite gameOverScreen;
     public Sprite victoryScreen;
 
@@ -52,14 +50,14 @@ public class BattleManager : MonoBehaviour {
     {
         for (int i = 0; i < 5; i++)
         {
-            hand.Draw();
+            player.Draw();
         }
     }
 
     void startTurn()
     {
         playerTurn = true;
-        hand.Draw();
+        player.Draw();
     }
 
     void endTurn()
@@ -70,18 +68,26 @@ public class BattleManager : MonoBehaviour {
     void enemyTurn()
     {
         string enemyMove = enemy.Move();
-        if (enemyMove.equals("Attack"))
+        if (enemyMove.Equals("Attack"))
         {
             player.takeDamage(enemy.str);
         }
-        else if (enemyMove.equals("Heal"))
+        else if (enemyMove.Equals("Heal"))
         {
-            enemy.Block();
+            enemy.Heal(5);
         }
     }
 
     void playCard()
     {
 
+        if (player.deck.cards.Count > 0)
+        {
+            player.hand.cards.Add(player.deck.cards.Dequeue());
+        }
+        else
+        {
+            player.health -= 1;
+        }
     }
 }

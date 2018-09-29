@@ -5,7 +5,7 @@ using UnityEngine;
 public class Deck : MonoBehaviour
 {
 
-    public GameObject[] cards;
+    public Queue cards;
 
     // Use this for initialization
     void Start()

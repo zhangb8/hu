@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour {
 		
 	}
 
-    void takeDamage(int dmg)
+    public void takeDamage(int dmg)
     {
         if (block > 0)
         {
@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour {
         }
     }
 
-    void Heal(int heal)
+    public void Heal(int heal)
     {
         if (health + heal > maxHealth)
         {
@@ -52,22 +52,18 @@ public class Enemy : MonoBehaviour {
         }
     }
 
-    void Block()
+    public void Block()
     {
         block += def;
     }
 
-    String Move()
+    public string Move()
     {
-        Random rnd = new Random();
-        int moveType = rnd.Next(1, 2);
+        int moveType = Random.Range(1, 2);
         if (moveType == 1)
         {
             return "Attack";
         }
-        else
-        {
-            return "Heal";
-        }
+        return "Heal";
     }
 }

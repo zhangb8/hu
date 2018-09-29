@@ -28,7 +28,7 @@ public class Player : MonoBehaviour {
 		
 	}
 
-    void takeDamage(int dmg)
+    public void takeDamage(int dmg)
     {
         if (health - dmg < 0)
         {
@@ -40,7 +40,7 @@ public class Player : MonoBehaviour {
         }
     }
 
-    void Heal (int heal)
+    public void Heal (int heal)
     {
         if (health + heal > maxHealth)
             {
@@ -52,7 +52,7 @@ public class Player : MonoBehaviour {
             }
     }
 
-    void reduceMana(int x)
+    public void reduceMana(int x)
     {
         if (mana - x < 0)
         {
@@ -64,8 +64,20 @@ public class Player : MonoBehaviour {
         }
     }
 
-    void addMana(int x)
+    public void addMana(int x)
     {
         mana += x;
+    }
+
+    public void Draw()
+    {
+        if (deck.cards.Count > 0)
+        {
+            hand.cards.Add(deck.cards.Dequeue());
+        }
+        else
+        {
+            takeDamage(1);
+        }
     }
 }
