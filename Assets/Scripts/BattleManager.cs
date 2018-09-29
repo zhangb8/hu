@@ -50,10 +50,7 @@ public class BattleManager : MonoBehaviour {
 
     void onCardUse()
     {
-        //Technically knows which card was clicked on from the delegate/event
-        //But there's no way to access it's information - potentially in the use
-        //Function in the card class, have it send information as well
-        Card.cardUsed -= onCardUse;
+        print("card used");
     }
 
     void startFight()
