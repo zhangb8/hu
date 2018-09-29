@@ -13,6 +13,11 @@ public class GameManager : MonoBehaviour {
 	void Start () {
     }
 
+    void Update()
+    {
+        Render();
+    }
+
     public void RenderHand()
     {
         for (int i = 0; i < bm.player.hand.Count; i++)
@@ -23,10 +28,23 @@ public class GameManager : MonoBehaviour {
             card.box.enabled = true;
         }
     }
-        // Update is called once per frame
-        void Update () {
+
+    public void RenderHP()
+    {
         hpText.text = "HP: " + bm.player.health.ToString() + "/" + bm.player.maxHealth.ToString();
-        manaText.text = "Mana: " + bm.player.mana.ToString() + "/" + bm.player.maxMana.ToString();
-        RenderHand();
     }
+    // Update is called once per frame
+
+    public void RenderMana()
+    {
+        manaText.text = "Mana: " + bm.player.mana.ToString() + "/" + bm.player.maxMana.ToString();
+    }
+
+    public void Render()
+    {
+        RenderHand();
+        RenderHP();
+        RenderMana();
+    }
+
 }
