@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 //leo leo on the wall who's the fairest of them all
 //brian brian on my roof who's the biggest goofy goof
 public class BattleManager : MonoBehaviour {
 
     public Enemy enemy;
     public Player player;
-    public Sprite gameOverScreen;
-    public Sprite victoryScreen;
+    public Image gameOverScreen;
+    public Image victoryScreen;
     public bool playerTurn = true;
     public GameObject[] items;
     public GameObject deck;
@@ -39,7 +40,7 @@ public class BattleManager : MonoBehaviour {
 
     void gameOver()
     {
-
+        gameOverScreen.enabled = true;
     }
 
     void Victory()
