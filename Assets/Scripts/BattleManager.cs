@@ -13,7 +13,6 @@ public class BattleManager : MonoBehaviour {
     public bool playerTurn = true;
     public GameObject[] items;
     public GameObject deck;
-
     // Use this for initialization
     void Start () {
         startFight();

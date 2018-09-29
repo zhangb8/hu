@@ -71,7 +71,7 @@ public class Player : MonoBehaviour {
             hand.Add(deck.Dequeue());
         }
 
-        else if (hand.Count == 7)
+        else if (deck.Count > 0 && hand.Count == 7)
         {
             print("hand too full!");
         }
