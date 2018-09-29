@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Card : MonoBehaviour {
-    public string name;
     public int cost;
     public string type;
+    public SpriteRenderer sprite;
+    public BoxCollider2D box;
 
 	// Use this for initialization
 	void Start () {
@@ -46,5 +47,10 @@ public class Card : MonoBehaviour {
         return type;
     }
 
-    void use() { }
+    void use() { print("using " + name); }
+
+    private void OnMouseUpAsButton()
+    {
+        use();
+    }
 }

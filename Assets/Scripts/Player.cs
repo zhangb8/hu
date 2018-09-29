@@ -7,16 +7,12 @@ public class Player : MonoBehaviour {
     public int health;
     public int maxMana;
     public int mana;
-    public Deck deck;
-    public Hand hand;
+    public Queue<GameObject> deck = new Queue<GameObject>();
+    public List<GameObject> hand = new List<GameObject>();
 
     private void Awake()
     {
 
-        maxHealth = 100;
-        health = 100;
-        maxMana = 5;
-        mana = 5;
     }
 
     // Use this for initialization
@@ -63,7 +59,6 @@ public class Player : MonoBehaviour {
             mana -= x;
         }
     }
-
     public void addMana(int x)
     {
         mana += x;
@@ -71,12 +66,18 @@ public class Player : MonoBehaviour {
 
     public void Draw()
     {
-        if (deck.cards.Count > 0)
+        if (deck.Count > 0 && hand.Count <= 6)
         {
-            hand.cards.Add(deck.cards.Dequeue());
+            hand.Add(deck.Dequeue());
+        }
+
+        else if (hand.Count == 7)
+        {
+            print("hand too full!");
         }
         else
         {
+            print("no more cards");
             takeDamage(1);
         }
     }

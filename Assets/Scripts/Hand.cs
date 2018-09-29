@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Hand : MonoBehaviour {
     public ArrayList cards;
+
     // Use this for initialization
     void Start () {
 		
@@ -14,6 +15,5 @@ public class Hand : MonoBehaviour {
 	void Update () {
 		
 	}
-
 
 }

@@ -59,7 +59,7 @@ public class Enemy : MonoBehaviour {
 
     public string Move()
     {
-        int moveType = Random.Range(1, 2);
+        int moveType = Random.Range(1, 3);
         if (moveType == 1)
         {
             return "Attack";

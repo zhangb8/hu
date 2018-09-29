@@ -9,9 +9,4 @@ public class Injection : Heal {
         cost = 2;
         type = "heal";
     }
-
-    int use()
-    {
-        return heal;
-    }
 }

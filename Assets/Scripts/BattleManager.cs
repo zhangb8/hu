@@ -9,11 +9,12 @@ public class BattleManager : MonoBehaviour {
     public Player player;
     public Sprite gameOverScreen;
     public Sprite victoryScreen;
-
     public bool playerTurn = true;
+    public GameObject[] items;
+    public GameObject deck;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         startFight();
     }
 	
@@ -48,6 +49,16 @@ public class BattleManager : MonoBehaviour {
 
     void startFight()
     {
+        items = Resources.LoadAll<GameObject>("");
+        for (int i = 0; i < 5; i++)
+        {
+            GameObject slash = Instantiate(items[0]) as GameObject;
+            slash.transform.parent = deck.transform;
+            player.deck.Enqueue(slash);
+            GameObject injection = Instantiate(items[1]) as GameObject;
+            injection.transform.parent = deck.transform;
+            player.deck.Enqueue(injection);
+        }
         for (int i = 0; i < 5; i++)
         {
             player.Draw();
@@ -60,7 +71,7 @@ public class BattleManager : MonoBehaviour {
         player.Draw();
     }
 
-    void endTurn()
+    public void endTurn()
     {
         playerTurn = false;
     }
@@ -75,19 +86,6 @@ public class BattleManager : MonoBehaviour {
         else if (enemyMove.Equals("Heal"))
         {
             enemy.Heal(5);
-        }
-    }
-
-    void playCard()
-    {
-
-        if (player.deck.cards.Count > 0)
-        {
-            player.hand.cards.Add(player.deck.cards.Dequeue());
-        }
-        else
-        {
-            player.health -= 1;
         }
     }
 }
