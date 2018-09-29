@@ -7,9 +7,10 @@ public class Card : MonoBehaviour {
     public string type;
     public SpriteRenderer sprite;
     public BoxCollider2D box;
-    public static bool wasClicked = false;
+    public bool wasClicked = false;
     public delegate void cardUsedDelegate();
     public static event cardUsedDelegate cardUsed;
+    public int val;
     // Use this for initialization
     void Start () {
 	}
@@ -49,12 +50,12 @@ public class Card : MonoBehaviour {
         return type;
     }
 
-    public static void use()
+    public void use()
     {
         wasClicked = true;
         if (cardUsed != null)
         {
-            cardUsed();
+            cardUsed.Invoke();
         }
     }
 

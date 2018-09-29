@@ -9,6 +9,7 @@ public class Player : MonoBehaviour {
     public int mana;
     public Queue<GameObject> deck = new Queue<GameObject>();
     public List<GameObject> hand = new List<GameObject>();
+    public List<GameObject> discard = new List<GameObject>();
 
     private void Awake()
     {
@@ -48,15 +49,17 @@ public class Player : MonoBehaviour {
             }
     }
 
-    public void reduceMana(int x)
+    public int reduceMana(int x)
     {
         if (mana - x < 0)
         {
             print("Not enough mana");
+            return -1;
         }
         else
         {
             mana -= x;
+            return x;
         }
     }
     public void addMana(int x)
@@ -80,5 +83,12 @@ public class Player : MonoBehaviour {
             print("no more cards");
             takeDamage(1);
         }
+    }
+
+    public void Discard(GameObject o)
+    {
+        discard.Add(o);
+        hand.Remove(o);
+        o.SetActive(false);
     }
 }

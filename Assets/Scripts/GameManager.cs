@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
     public BattleManager bm;
     public Text hpText;
     public Text manaText;
+    public Text enemyHpText;
 
 	// Use this for initialization
 	void Start () {
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour {
     public void RenderHP()
     {
         hpText.text = "HP: " + bm.player.health.ToString() + "/" + bm.player.maxHealth.ToString();
+        enemyHpText.text = "HP: " + bm.enemy.health.ToString() + "/" + bm.enemy.maxHealth.ToString();
     }
     // Update is called once per frame
 

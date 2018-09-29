@@ -45,12 +45,44 @@ public class BattleManager : MonoBehaviour {
 
     void Victory()
     {
+        victoryScreen.enabled = true;
 
     }
 
     void onCardUse()
     {
+        GameObject cardToRemove = null;
         print("card used");
+        foreach (GameObject o in player.hand)
+        {
+            Card c = o.GetComponent<Card>();
+            if (c.wasClicked)
+            {
+                cardToRemove = o;
+                break;
+            }
+        }
+        if (cardToRemove != null)
+        HandleCard(cardToRemove);
+    }
+
+    void HandleCard(GameObject o)
+    {
+        Card c = o.GetComponent<Card>();
+        if (player.reduceMana(c.cost) == -1)
+        {
+            print("Not enough mana!");
+            return;
+        }
+        if (c is Attack)
+        {
+            enemy.takeDamage(c.val);
+        }
+        else if (c is Heal)
+        {
+            player.Heal(c.val);
+        }
+        player.Discard(o);
     }
 
     void startFight()
@@ -75,6 +107,7 @@ public class BattleManager : MonoBehaviour {
     {
         playerTurn = true;
         player.Draw();
+        player.mana = player.maxMana;
     }
 
     public void endTurn()
@@ -91,7 +124,7 @@ public class BattleManager : MonoBehaviour {
         }
         else if (enemyMove.Equals("Heal"))
         {
-            enemy.Heal(5);
+            enemy.Heal(enemy.def);
         }
     }
 }

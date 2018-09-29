@@ -8,6 +8,6 @@ public class Slash : Attack {
     {
         name = "Slash";
         cost = 2;
-        dmg = 5;
+        val = 5;
     }
 }

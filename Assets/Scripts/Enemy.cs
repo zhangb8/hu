@@ -11,11 +11,6 @@ public class Enemy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        maxHealth = 50;
-        health = 50;
-        str = 10;
-        def = 10;
-        block = 0;
 	}
 	
 	// Update is called once per frame
@@ -25,10 +20,6 @@ public class Enemy : MonoBehaviour {
 
     public void takeDamage(int dmg)
     {
-        if (block > 0)
-        {
-            dmg -= block;
-        }
 
         if (health - dmg < 0)
         {

@@ -8,5 +8,6 @@ public class Injection : Heal {
         name = "injection";
         cost = 2;
         type = "heal";
+        val = 20;
     }
 }
