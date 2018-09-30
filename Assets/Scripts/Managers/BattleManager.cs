@@ -19,6 +19,7 @@ public class BattleManager : MonoBehaviour {
         Card.cardUsed += onCardUse;
         startFight();
     }
+
 	// Update is called once per frame
 	void Update () {
 		if (enemy.health == 0)

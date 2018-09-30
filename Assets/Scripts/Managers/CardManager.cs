@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class Hand : MonoBehaviour {
-    public ArrayList cards;
+public class CardManager : MonoBehaviour {
 
-    // Use this for initialization
-    void Start () {
+	// Use this for initialization
+	void Start () {
 		
 	}
 	
@@ -15,5 +13,4 @@ public class Hand : MonoBehaviour {
 	void Update () {
 		
 	}
-
 }
