@@ -11,12 +11,12 @@ public class BattleManager : MonoBehaviour {
     public Image gameOverScreen;
     public Image victoryScreen;
     public bool playerTurn = true;
-    public GameObject[] items;
-    public GameObject deck;
+    public CardManager cm;
 
     // Use this for initialization
     void Start () {
         Card.cardUsed += onCardUse;
+        cm.LoadResources();
         startFight();
     }
 
@@ -54,7 +54,7 @@ public class BattleManager : MonoBehaviour {
     {
         GameObject cardToRemove = null;
         print("card used");
-        foreach (GameObject o in player.hand)
+        foreach (GameObject o in cm.hand)
         {
             Card c = o.GetComponent<Card>();
             if (c.wasClicked)
@@ -83,31 +83,21 @@ public class BattleManager : MonoBehaviour {
         {
             player.Heal(c.val);
         }
-        player.Discard(o);
+        cm.Discard(o);
     }
 
     void startFight()
     {
-        items = Resources.LoadAll<GameObject>("");
         for (int i = 0; i < 5; i++)
         {
-            GameObject slash = Instantiate(items[0]) as GameObject;
-            slash.transform.parent = deck.transform;
-            player.deck.Enqueue(slash);
-            GameObject injection = Instantiate(items[1]) as GameObject;
-            injection.transform.parent = deck.transform;
-            player.deck.Enqueue(injection);
-        }
-        for (int i = 0; i < 5; i++)
-        {
-            player.Draw();
+            cm.Draw();
         }
     }
 
     void startTurn()
     {
         playerTurn = true;
-        player.Draw();
+        cm.Draw();
         player.mana = player.maxMana;
     }
 

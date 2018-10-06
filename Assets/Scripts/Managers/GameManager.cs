@@ -6,12 +6,14 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
     public BattleManager bm;
+    public CardManager cm;
     public Text hpText;
     public Text manaText;
     public Text enemyHpText;
 
 	// Use this for initialization
 	void Start () {
+
     }
 
     void Update()
@@ -21,10 +23,12 @@ public class GameManager : MonoBehaviour {
 
     public void RenderHand()
     {
-        for (int i = 0; i < bm.player.hand.Count; i++)
-        {
-            Card card = bm.player.hand[i].GetComponent<Card>();
-            bm.player.hand[i].transform.position = new Vector3(-4.2f + (1.9f * i), -3.3f, 0);
+        for (int i = 0; i < cm.hand.Count; i++)
+        {            
+            GameObject cardObj = Instantiate(cm.hand[i]) as GameObject;
+            cardObj.transform.parent = cm.deckObj.transform;
+            Card card = cardObj.GetComponent<Card>();
+            cardObj.transform.position = new Vector3(-4.2f + (1.9f * i), -3.3f, 0);
             card.sprite.enabled = true;
             card.box.enabled = true;
         }

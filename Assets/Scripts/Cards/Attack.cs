@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class Attack : Card
 {
-    public int dmg = 5;
+    private void Start()
+    {
+        type = "attack";
+    }
 }

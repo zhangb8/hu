@@ -7,9 +7,7 @@ public class Player : MonoBehaviour {
     public int health;
     public int maxMana;
     public int mana;
-    public Queue<GameObject> deck = new Queue<GameObject>();
-    public List<GameObject> hand = new List<GameObject>();
-    public List<GameObject> discard = new List<GameObject>();
+
 
     private void Awake()
     {
@@ -67,28 +65,7 @@ public class Player : MonoBehaviour {
         mana += x;
     }
 
-    public void Draw()
-    {
-        if (deck.Count > 0 && hand.Count <= 6)
-        {
-            hand.Add(deck.Dequeue());
-        }
 
-        else if (deck.Count > 0 && hand.Count == 7)
-        {
-            print("hand too full!");
-        }
-        else
-        {
-            print("no more cards");
-            takeDamage(1);
-        }
-    }
 
-    public void Discard(GameObject o)
-    {
-        discard.Add(o);
-        hand.Remove(o);
-        o.SetActive(false);
-    }
+
 }
