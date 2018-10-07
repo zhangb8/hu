@@ -12,11 +12,12 @@ public class BattleManager : MonoBehaviour {
     public Image victoryScreen;
     public bool playerTurn = true;
     public CardManager cm;
+    public InventoryManager im;
 
     // Use this for initialization
     void Start () {
         Card.cardUsed += onCardUse;
-        cm.LoadResources();
+        cm.InitDeck();
         startFight();
     }
 

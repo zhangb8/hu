@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour {
     public Text manaText;
     public Text enemyHpText;
 
-	// Use this for initialization
 	void Start () {
 
     }
@@ -20,37 +19,40 @@ public class GameManager : MonoBehaviour {
     {
         Render();
     }
-
+    
+    // Makes whatever's in ur hand (cm.hand) show up on the screen in the right place
     public void RenderHand()
     {
         for (int i = 0; i < cm.hand.Count; i++)
-        {            
-            GameObject cardObj = Instantiate(cm.hand[i]) as GameObject;
-            cardObj.transform.parent = cm.deckObj.transform;
+        {
+            GameObject cardObj = cm.hand[i];
             Card card = cardObj.GetComponent<Card>();
+            cardObj.SetActive(true);
             cardObj.transform.position = new Vector3(-4.2f + (1.9f * i), -3.3f, 0);
             card.sprite.enabled = true;
             card.box.enabled = true;
         }
     }
 
+    // Makes the health text correct every frame
     public void RenderHP()
     {
         hpText.text = "HP: " + bm.player.health.ToString() + "/" + bm.player.maxHealth.ToString();
         enemyHpText.text = "HP: " + bm.enemy.health.ToString() + "/" + bm.enemy.maxHealth.ToString();
     }
-    // Update is called once per frame
 
+    // Makes the mana text correct every frame
     public void RenderMana()
     {
         manaText.text = "Mana: " + bm.player.mana.ToString() + "/" + bm.player.maxMana.ToString();
     }
 
+    //Renders everything at once
     public void Render()
     {
-        RenderHand();
         RenderHP();
         RenderMana();
+        RenderHand();
     }
 
 }
