@@ -40,17 +40,22 @@ public class BattleManager : MonoBehaviour {
         }
 	}
 
+    //displays game over screen
     void gameOver()
     {
         gameOverScreen.enabled = true;
     }
 
+    //displays victory screen
     void Victory()
     {
         victoryScreen.enabled = true;
 
     }
 
+    //this is called when a card is clicked and the event is called
+    //iterates through cards in hand to find the one that was clicked
+    //then handles the card
     void onCardUse()
     {
         GameObject cardToRemove = null;
@@ -68,14 +73,19 @@ public class BattleManager : MonoBehaviour {
         HandleCard(cardToRemove);
     }
 
+    //handles what a card does
+    //needs to be reworked so that abilities aren't hardcoded in
     void HandleCard(GameObject o)
     {
         Card c = o.GetComponent<Card>();
+        //checks if player has enough mana
         if (player.reduceMana(c.cost) == -1)
         {
             print("Not enough mana!");
             return;
         }
+        //this part needs to be reworked
+        //hardcodes how cards are used
         if (c is Attack)
         {
             enemy.takeDamage(c.val);
@@ -87,6 +97,7 @@ public class BattleManager : MonoBehaviour {
         cm.Discard(o);
     }
 
+    //draws 5 cards
     void startFight()
     {
         for (int i = 0; i < 5; i++)
@@ -95,6 +106,8 @@ public class BattleManager : MonoBehaviour {
         }
     }
 
+    //called when it is player's turn
+    //draws a card and resets mana
     void startTurn()
     {
         playerTurn = true;
@@ -102,11 +115,13 @@ public class BattleManager : MonoBehaviour {
         player.mana = player.maxMana;
     }
 
+    //changes to enemy's turn
     public void endTurn()
     {
         playerTurn = false;
     }
 
+    //enemy turn logic
     void enemyTurn()
     {
         string enemyMove = enemy.Move();

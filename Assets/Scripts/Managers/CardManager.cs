@@ -40,6 +40,7 @@ public class CardManager : MonoBehaviour
         }
     }
 
+    //enqueues everything in deck to battledeck
     public void EnqueueBattleDeck()
     {
         foreach (GameObject o in deck)
@@ -48,6 +49,7 @@ public class CardManager : MonoBehaviour
         }
     }
 
+    //shuffles everything in deck
     public void ShuffleDeck()
     {
         int cardCount = deck.Count;
@@ -62,6 +64,7 @@ public class CardManager : MonoBehaviour
         deck = ShuffledDeck;
     }
 
+    //puts a card from battledeck to hand
     public void Draw()
     {
         if (battleDeck.Count > 0 && hand.Count <= 6)
@@ -78,6 +81,7 @@ public class CardManager : MonoBehaviour
         }
     }
 
+    //discards hand to discard pile
     public void Discard(GameObject o)
     {
         discard.Add(o);

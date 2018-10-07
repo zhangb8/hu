@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
 
     }
 
+    //renders everything every frame (pretty bad for runtime)
     void Update()
     {
         Render();
