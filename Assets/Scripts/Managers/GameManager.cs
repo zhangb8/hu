@@ -20,7 +20,15 @@ public class GameManager : MonoBehaviour {
     {
         Render();
     }
-    
+
+    //Renders everything at once
+    public void Render()
+    {
+        RenderHP();
+        RenderMana();
+        RenderHand();
+    }
+
     // Makes whatever's in ur hand (cm.hand) show up on the screen in the right place
     public void RenderHand()
     {
@@ -48,12 +56,6 @@ public class GameManager : MonoBehaviour {
         manaText.text = "Mana: " + bm.player.mana.ToString() + "/" + bm.player.maxMana.ToString();
     }
 
-    //Renders everything at once
-    public void Render()
-    {
-        RenderHP();
-        RenderMana();
-        RenderHand();
-    }
+
 
 }
