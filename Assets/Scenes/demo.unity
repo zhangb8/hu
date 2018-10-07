@@ -528,8 +528,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 15
   health: 15
-  str: 20
-  def: 5
+  str: 5
+  def: 3
   block: 0
 --- !u!4 &845183764
 Transform:
@@ -1072,8 +1072,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99541c6a265db0b45b59865f183d641f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  health: 100
+  maxHealth: 20
+  health: 20
   maxMana: 5
   mana: 5
 --- !u!4 &1430219477
