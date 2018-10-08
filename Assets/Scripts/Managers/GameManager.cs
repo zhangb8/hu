@@ -12,13 +12,13 @@ public class GameManager : MonoBehaviour {
     public Text enemyHpText;
 
 	void Start () {
-
+        Player.damageTake += Render;
     }
 
     //renders everything every frame (pretty bad for runtime)
     void Update()
     {
-        Render();
+
     }
 
     //Renders everything at once

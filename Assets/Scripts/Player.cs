@@ -7,7 +7,9 @@ public class Player : MonoBehaviour {
     public int health;
     public int maxMana;
     public int mana;
-
+    public bool takenDamage = false;
+    public delegate void playerTakeDamage();
+    public static event playerTakeDamage damageTake;
 
     private void Awake()
     {
@@ -25,6 +27,12 @@ public class Player : MonoBehaviour {
 
     public void takeDamage(int dmg)
     {
+        takenDamage = true;
+        if (damageTake != null)
+        {
+            damageTake.Invoke();
+        }
+
         if (health - dmg < 0)
         {
             health = 0;
