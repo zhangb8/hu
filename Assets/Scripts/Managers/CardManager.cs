@@ -20,8 +20,8 @@ public class CardManager : MonoBehaviour
     public void InitDeck()
     {
         BuildDeck();
-        ShuffleDeck();
-        EnqueueBattleDeck();
+        deck = ShuffleDeck(deck);
+        EnqueueBattleDeck(deck);
     }
 
     // takes all the items in inventory and builds deck from cards from items
@@ -41,43 +41,43 @@ public class CardManager : MonoBehaviour
     }
 
     //enqueues everything in deck to battledeck
-    public void EnqueueBattleDeck()
+    public void EnqueueBattleDeck(List<GameObject> d)
     {
-        foreach (GameObject o in deck)
+        foreach (GameObject o in d)
         {
             battleDeck.Enqueue(o);
         }
     }
 
     //shuffles everything in deck
-    public void ShuffleDeck()
+    public List<GameObject> ShuffleDeck(List<GameObject> d)
     {
-        int cardCount = deck.Count;
+        int cardCount = d.Count;
         List<GameObject> ShuffledDeck = new List<GameObject>();
         for (int i = 0; i < cardCount; i++)
         {
-            int index = Random.Range(0, deck.Count-1);
-            GameObject rand = deck[index];
-            deck.RemoveAt(index);
+            int index = Random.Range(0, d.Count-1);
+            GameObject rand = d[index];
+            d.RemoveAt(index);
             ShuffledDeck.Add(rand);
         }
-        deck = ShuffledDeck;
+        return ShuffledDeck;
     }
 
     //puts a card from battledeck to hand
     public void Draw()
     {
-        if (battleDeck.Count > 0 && hand.Count <= 6)
-        {
-            hand.Add(battleDeck.Dequeue());
-        }
-        else if (battleDeck.Count > 0 && hand.Count == 7)
+        if (hand.Count == 7)
         {
             print("hand too full!");
         }
         else
         {
-            print("no more cards");
+            if (battleDeck.Count == 0)
+            {
+                DiscardToDeck();
+            }
+            hand.Add(battleDeck.Dequeue());
         }
     }
 
@@ -87,5 +87,13 @@ public class CardManager : MonoBehaviour
         discard.Add(o);
         hand.Remove(o);
         o.SetActive(false);
+    }
+
+    public void DiscardToDeck()
+    {
+        print("no more cards");
+        discard = ShuffleDeck(discard);
+        EnqueueBattleDeck(discard);
+        discard.Clear();
     }
 }

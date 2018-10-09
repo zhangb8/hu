@@ -7,9 +7,9 @@ public class Player : MonoBehaviour {
     public int health;
     public int maxMana;
     public int mana;
+    public int block;
     public bool takenDamage = false;
-    public delegate void playerTakeDamage();
-    public static event playerTakeDamage damageTake;
+
 
     private void Awake()
     {
@@ -25,21 +25,34 @@ public class Player : MonoBehaviour {
 		
 	}
 
+    public void addBlock(int blk)
+    {
+        block += blk;
+    }
+
     public void takeDamage(int dmg)
     {
         takenDamage = true;
-        if (damageTake != null)
+        //if (damageTake != null)
+        //{
+        //    damageTake.Invoke();
+        //}
+        if ((block - dmg) >= 0)
         {
-            damageTake.Invoke();
+            block -= dmg;
         }
-
-        if (health - dmg < 0)
+        else if ((block-dmg) < 0)
         {
-            health = 0;
-        }
-        else
-        {
-            health -= dmg;
+            block = 0;
+            dmg = dmg - block;
+            if (health - dmg < 0)
+            {
+                health = 0;
+            }
+            else
+            {
+                health -= dmg;
+            }
         }
     }
 

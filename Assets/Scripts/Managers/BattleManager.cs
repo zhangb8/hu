@@ -66,6 +66,7 @@ public class BattleManager : MonoBehaviour {
             if (c.wasClicked)
             {
                 cardToRemove = o;
+                c.wasClicked = false;
                 break;
             }
         }
@@ -93,6 +94,10 @@ public class BattleManager : MonoBehaviour {
         else if (c is Heal)
         {
             player.Heal(c.val);
+        }
+        else if (c is Defense)
+        {
+            player.addBlock(c.val);
         }
         cm.Discard(o);
     }
