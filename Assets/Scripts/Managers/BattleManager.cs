@@ -13,12 +13,13 @@ public class BattleManager : MonoBehaviour {
     public bool playerTurn = true;
     public CardManager cm;
     public InventoryManager im;
+    public string EnemyMove;
 
     // Use this for initialization
     void Start () {
         Card.cardUsed += onCardUse;
         cm.InitDeck();
-        startFight();
+        startTurn();
     }
 
 	// Update is called once per frame
@@ -102,22 +103,18 @@ public class BattleManager : MonoBehaviour {
         cm.Discard(o);
     }
 
-    //draws 5 cards
-    void startFight()
-    {
-        for (int i = 0; i < 5; i++)
-        {
-            cm.Draw();
-        }
-    }
-
     //called when it is player's turn
     //draws a card and resets mana
     void startTurn()
     {
         playerTurn = true;
+        while (cm.hand.Count < 4)
+        {
+            cm.Draw();
+        }
         cm.Draw();
         player.mana = player.maxMana;
+        EnemyMove = enemy.Move();
     }
 
     //changes to enemy's turn
@@ -129,14 +126,13 @@ public class BattleManager : MonoBehaviour {
     //enemy turn logic
     void enemyTurn()
     {
-        string enemyMove = enemy.Move();
-        if (enemyMove.Equals("Attack"))
+        if (EnemyMove.Equals("Attack"))
         {
-            player.takeDamage(enemy.str);
+            player.takeDamage(enemy.dmg);
         }
-        else if (enemyMove.Equals("Heal"))
+        else if (EnemyMove.Equals("Heal"))
         {
-            enemy.Heal(enemy.def);
+            enemy.Heal(enemy.heal);
         }
     }
 }

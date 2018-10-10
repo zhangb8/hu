@@ -43,8 +43,8 @@ public class Player : MonoBehaviour {
         }
         else if ((block-dmg) < 0)
         {
-            block = 0;
             dmg = dmg - block;
+            block = 0;
             if (health - dmg < 0)
             {
                 health = 0;

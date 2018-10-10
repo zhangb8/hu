@@ -5,9 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
     public int maxHealth;
     public int health;
-    public int str;
-    public int def;
-    public int block;
+    public int dmg;
+    public int heal;
 
 	// Use this for initialization
 	void Start () {
@@ -41,11 +40,6 @@ public class Enemy : MonoBehaviour {
         {
             health += heal;
         }
-    }
-
-    public void Block()
-    {
-        block += def;
     }
 
     public string Move()
