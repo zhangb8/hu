@@ -59,8 +59,20 @@ public class Card : MonoBehaviour {
         }
     }
 
-    private void OnMouseUpAsButton()
+    public void discard()
     {
-        use();
+        print("discarded");
+    }
+
+    private void OnMouseOver()
+    {
+        if (Input.GetMouseButtonUp(0))
+        {
+            use();
+        }
+        else if (Input.GetMouseButtonUp(1))
+        {
+            discard();
+        }
     }
 }

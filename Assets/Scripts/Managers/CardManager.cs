@@ -75,7 +75,8 @@ public class CardManager : MonoBehaviour
         {
             if (battleDeck.Count == 0)
             {
-                DiscardToDeck();
+                print("no more cards");
+                return;
             }
             hand.Add(battleDeck.Dequeue());
         }
@@ -91,7 +92,6 @@ public class CardManager : MonoBehaviour
 
     public void DiscardToDeck()
     {
-        print("no more cards");
         discard = ShuffleDeck(discard);
         EnqueueBattleDeck(discard);
         discard.Clear();

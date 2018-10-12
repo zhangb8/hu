@@ -108,11 +108,10 @@ public class BattleManager : MonoBehaviour {
     void startTurn()
     {
         playerTurn = true;
-        while (cm.hand.Count < 4)
+        while (cm.battleDeck.Count != 0 && cm.hand.Count < 5)
         {
             cm.Draw();
         }
-        cm.Draw();
         player.mana = player.maxMana;
         EnemyMove = enemy.Move();
     }
@@ -133,6 +132,14 @@ public class BattleManager : MonoBehaviour {
         else if (EnemyMove.Equals("Heal"))
         {
             enemy.Heal(enemy.heal);
+        }
+    }
+
+    public void reshuffle()
+    {
+        if (player.reduceMana(3) != -1)
+        {
+            cm.DiscardToDeck();
         }
     }
 }
