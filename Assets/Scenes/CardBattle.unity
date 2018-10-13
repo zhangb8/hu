@@ -152,7 +152,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 573937ec900ca0b4daed2b82643df073, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.304
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -416,12 +416,12 @@ Prefab:
     - target: {fileID: 224844073878883680, guid: 473edfe1ea716614ba61faa42d8b4ab7,
         type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 224510844312749878, guid: 473edfe1ea716614ba61faa42d8b4ab7,
         type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4758003000122236, guid: 473edfe1ea716614ba61faa42d8b4ab7, type: 2}
       propertyPath: m_RootOrder
@@ -430,17 +430,17 @@ Prefab:
     - target: {fileID: 224850750687763880, guid: 473edfe1ea716614ba61faa42d8b4ab7,
         type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 224590901984400358, guid: 473edfe1ea716614ba61faa42d8b4ab7,
         type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 224318302724311986, guid: 473edfe1ea716614ba61faa42d8b4ab7,
         type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 224089650320935746, guid: 473edfe1ea716614ba61faa42d8b4ab7,
         type: 2}
@@ -450,12 +450,12 @@ Prefab:
     - target: {fileID: 224567510080649736, guid: 473edfe1ea716614ba61faa42d8b4ab7,
         type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 224704727428468876, guid: 473edfe1ea716614ba61faa42d8b4ab7,
         type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 473edfe1ea716614ba61faa42d8b4ab7, type: 2}

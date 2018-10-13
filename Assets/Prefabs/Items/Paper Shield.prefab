@@ -52,10 +52,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cards:
-  - {fileID: 1316414875496560, guid: 1964d28693b3e1b4d88f6789bfc817f4, type: 2}
-  - {fileID: 1316414875496560, guid: 1964d28693b3e1b4d88f6789bfc817f4, type: 2}
-  - {fileID: 1316414875496560, guid: 1964d28693b3e1b4d88f6789bfc817f4, type: 2}
-  - {fileID: 1316414875496560, guid: 1964d28693b3e1b4d88f6789bfc817f4, type: 2}
-  - {fileID: 1316414875496560, guid: 1964d28693b3e1b4d88f6789bfc817f4, type: 2}
+  - {fileID: 1481320630087868, guid: 1964d28693b3e1b4d88f6789bfc817f4, type: 2}
+  - {fileID: 1481320630087868, guid: 1964d28693b3e1b4d88f6789bfc817f4, type: 2}
+  - {fileID: 1481320630087868, guid: 1964d28693b3e1b4d88f6789bfc817f4, type: 2}
+  - {fileID: 1481320630087868, guid: 1964d28693b3e1b4d88f6789bfc817f4, type: 2}
+  - {fileID: 1481320630087868, guid: 1964d28693b3e1b4d88f6789bfc817f4, type: 2}
   sprite: {fileID: 0}
   weight: 1
