@@ -10,12 +10,6 @@ public class Player : MonoBehaviour {
     public int block;
     public bool takenDamage = false;
 
-
-    private void Awake()
-    {
-
-    }
-
     // Use this for initialization
     void Start () {
     }
@@ -24,19 +18,13 @@ public class Player : MonoBehaviour {
 	void Update () {
 		
 	}
-
     public void addBlock(int blk)
     {
         block += blk;
     }
-
     public void takeDamage(int dmg)
     {
         takenDamage = true;
-        //if (damageTake != null)
-        //{
-        //    damageTake.Invoke();
-        //}
         if ((block - dmg) >= 0)
         {
             block -= dmg;
@@ -55,7 +43,6 @@ public class Player : MonoBehaviour {
             }
         }
     }
-
     public void Heal (int heal)
     {
         if (health + heal > maxHealth)
@@ -85,8 +72,4 @@ public class Player : MonoBehaviour {
     {
         mana += x;
     }
-
-
-
-
 }
