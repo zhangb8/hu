@@ -13,6 +13,7 @@ public class BattleManager : MonoBehaviour {
     public bool playerTurn = true;
     public CardManager cm;
     public InventoryManager im;
+    public string enemyMove;
 
     // Use this for initialization
     void Start () {
@@ -139,6 +140,7 @@ public class BattleManager : MonoBehaviour {
             cm.Draw();
         }
         player.mana = player.maxMana;
+        enemyMove = enemy.Move();
     }
 
     //changes to enemy's turn
@@ -150,12 +152,11 @@ public class BattleManager : MonoBehaviour {
     //enemy turn logic
     void enemyTurn()
     {
-        string EnemyMove = enemy.Move();
-        if (EnemyMove.Equals("Attack"))
+        if (enemyMove.Equals("Attack"))
         {
             player.takeDamage(enemy.dmg);
         }
-        else if (EnemyMove.Equals("Heal"))
+        else if (enemyMove.Equals("Heal"))
         {
             enemy.Heal(enemy.heal);
         }

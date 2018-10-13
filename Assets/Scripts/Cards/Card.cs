@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.EventSystems;
 public class Card : MonoBehaviour {
     public new string name;
     public int cost;
@@ -22,7 +22,7 @@ public class Card : MonoBehaviour {
     void Start () {
         RenderCard();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		
@@ -103,18 +103,6 @@ public class Card : MonoBehaviour {
         if (cardDiscarded != null)
         {
             cardDiscarded.Invoke();
-        }
-    }
-
-    private void OnMouseOver()
-    {
-        if (Input.GetMouseButtonUp(0))
-        {
-            use();
-        }
-        else if (Input.GetMouseButtonUp(1))
-        {
-            discard();
         }
     }
 }

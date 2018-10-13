@@ -259,7 +259,7 @@ MonoBehaviour:
   titleText: {fileID: 114972015941332326}
   descriptionText: {fileID: 114402615876957646}
   typeText: {fileID: 114869458505241750}
-  val: 4
+  val: 3
 --- !u!114 &114869458505241750
 MonoBehaviour:
   m_ObjectHideFlags: 1

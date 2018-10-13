@@ -29,6 +29,12 @@ public class BattleUIManager : MonoBehaviour {
         RenderMana();
         RenderHand();
         RenderDeck();
+        RenderIntention();
+    }
+
+    public void RenderIntention()
+    {
+        intentionText.text = bm.enemyMove;
     }
 
     // Makes whatever's in ur hand (cm.hand) show up on the screen in the right place
