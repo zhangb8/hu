@@ -54,6 +54,5 @@ MonoBehaviour:
   cards:
   - {fileID: 1744701255335926, guid: 9ce8815ff8aa182468a3c73b5a92d2ea, type: 2}
   - {fileID: 1744701255335926, guid: 9ce8815ff8aa182468a3c73b5a92d2ea, type: 2}
-  - {fileID: 1744701255335926, guid: 9ce8815ff8aa182468a3c73b5a92d2ea, type: 2}
   sprite: {fileID: 0}
   weight: 1

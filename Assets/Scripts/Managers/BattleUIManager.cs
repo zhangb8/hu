@@ -70,7 +70,18 @@ public class BattleUIManager : MonoBehaviour {
 
     public void RenderDeck()
     {
-        deckText.text = "Cards Left: " + cm.battleDeck.Count.ToString();
+        if (cm.battleDeck.Count == 0)
+        {
+            deckText.color = Color.red;
+            deckText.fontStyle = FontStyle.Bold;
+            deckText.text = "NO MORE CARDS";
+        }
+        else
+        {
+            deckText.color = Color.black;
+            deckText.fontStyle = FontStyle.Normal;
+            deckText.text = "Cards Left: " + cm.battleDeck.Count.ToString();
+        }
     }
 
 }

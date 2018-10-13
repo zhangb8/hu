@@ -47,8 +47,8 @@ public class Enemy : MonoBehaviour {
         int moveType = Random.Range(1, 3);
         if (moveType == 1)
         {
-            return "Attack";
+            return "Attacking";
         }
-        return "Heal";
+        return "Healing";
     }
 }

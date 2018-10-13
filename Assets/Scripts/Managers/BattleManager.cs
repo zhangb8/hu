@@ -156,11 +156,11 @@ public class BattleManager : MonoBehaviour {
     //enemy turn logic
     void enemyTurn()
     {
-        if (enemyMove.Equals("Attack"))
+        if (enemyMove.Equals("Attacking"))
         {
             player.takeDamage(enemy.dmg);
         }
-        else if (enemyMove.Equals("Heal"))
+        else if (enemyMove.Equals("Healing"))
         {
             enemy.Heal(enemy.heal);
         }
