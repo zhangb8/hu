@@ -61,22 +61,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Cards\Attack.cs" />
-    <Compile Include="Assets\Scripts\Cards\Attacks\Slash.cs" />
-    <Compile Include="Assets\Scripts\Cards\Card.cs" />
-    <Compile Include="Assets\Scripts\Cards\Defense.cs" />
-    <Compile Include="Assets\Scripts\Cards\Heal.cs" />
-    <Compile Include="Assets\Scripts\Cards\Heals\Injection.cs" />
-    <Compile Include="Assets\Scripts\Deck.cs" />
-    <Compile Include="Assets\Scripts\Discard.cs" />
-    <Compile Include="Assets\Scripts\Enemy.cs" />
-    <Compile Include="Assets\Scripts\Hand.cs" />
+    <Compile Include="Assets\Scripts\Cards\Structures\Card.cs" />
+    <Compile Include="Assets\Scripts\Cards\Structures\Deck.cs" />
+    <Compile Include="Assets\Scripts\Cards\Structures\Discard.cs" />
+    <Compile Include="Assets\Scripts\Cards\Structures\Hand.cs" />
+    <Compile Include="Assets\Scripts\Cards\Types\Attack.cs" />
+    <Compile Include="Assets\Scripts\Cards\Types\Defense.cs" />
+    <Compile Include="Assets\Scripts\Cards\Types\Heal.cs" />
+    <Compile Include="Assets\Scripts\Characters\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\Managers\BattleManager.cs" />
     <Compile Include="Assets\Scripts\Managers\CardManager.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Managers\InventoryManager.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Brian/Desktop/hu/hu-master/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

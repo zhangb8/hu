@@ -8,8 +8,11 @@ public class Card : MonoBehaviour {
     public SpriteRenderer sprite;
     public BoxCollider2D box;
     public bool wasClicked = false;
+    public bool toBeDiscarded = false;
     public delegate void cardUsedDelegate();
     public static event cardUsedDelegate cardUsed;
+    public delegate void cardDiscardedDelegate();
+    public static event cardDiscardedDelegate cardDiscarded;
     public int val;
     // Use this for initialization
     void Start () {
@@ -61,7 +64,11 @@ public class Card : MonoBehaviour {
 
     public void discard()
     {
-        print("discarded");
+        toBeDiscarded = true;
+        if (cardDiscarded != null)
+        {
+            cardDiscarded.Invoke();
+        }
     }
 
     private void OnMouseOver()

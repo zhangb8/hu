@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour {
     public Text hpText;
     public Text manaText;
     public Text enemyHpText;
-    public Text blockText;
     public Text deckText;
     public Text intentionText;
 
@@ -29,9 +28,7 @@ public class GameManager : MonoBehaviour {
         RenderHP();
         RenderMana();
         RenderHand();
-        RenderBlock();
         RenderDeck();
-        RenderIntention();
     }
 
     // Makes whatever's in ur hand (cm.hand) show up on the screen in the right place
@@ -61,26 +58,9 @@ public class GameManager : MonoBehaviour {
         manaText.text = "Mana: " + bm.player.mana.ToString() + "/" + bm.player.maxMana.ToString();
     }
 
-    public void RenderBlock()
-    {
-        blockText.text = "Block: " + bm.player.block.ToString();
-    }
-
     public void RenderDeck()
     {
         deckText.text = "Cards Left: " + cm.battleDeck.Count.ToString();
-    }
-
-    public void RenderIntention()
-    {
-        if (bm.EnemyMove == "Attack")
-        {
-            intentionText.text = "Attacking for " + bm.enemy.dmg.ToString();
-        }
-        else
-        {
-            intentionText.text = "Healing for " + bm.enemy.heal.ToString();
-        }
     }
 
 }

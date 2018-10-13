@@ -18,6 +18,7 @@ public class BattleManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         Card.cardUsed += onCardUse;
+        Card.cardDiscarded += onCardDiscard;
         cm.InitDeck();
         startTurn();
     }
@@ -75,6 +76,29 @@ public class BattleManager : MonoBehaviour {
         HandleCard(cardToRemove);
     }
 
+    void onCardDiscard()
+    {
+        GameObject cardToRemove = null;
+        print("card discarded");
+        foreach (GameObject o in cm.hand)
+        {
+            Card c = o.GetComponent<Card>();
+            if (c.toBeDiscarded)
+            {
+                cardToRemove = o;
+                c.toBeDiscarded = false;
+                break;
+            }
+        }
+        if (cardToRemove != null)
+            discardCard(cardToRemove);
+    }
+
+    void discardCard(GameObject o)
+    {
+        cm.Discard(o);
+    }
+
     //handles what a card does
     //needs to be reworked so that abilities aren't hardcoded in
     void HandleCard(GameObject o)
@@ -108,6 +132,7 @@ public class BattleManager : MonoBehaviour {
     void startTurn()
     {
         playerTurn = true;
+        player.block = 0;
         while (cm.battleDeck.Count != 0 && cm.hand.Count < 5)
         {
             cm.Draw();

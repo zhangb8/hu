@@ -83,7 +83,7 @@ MonoBehaviour:
   sprite: {fileID: 212655756529825494}
   box: {fileID: 61759164815668286}
   wasClicked: 0
-  val: 5
+  val: 20
 --- !u!212 &212655756529825494
 SpriteRenderer:
   m_ObjectHideFlags: 1
