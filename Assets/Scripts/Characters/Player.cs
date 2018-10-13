@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public class Player : MonoBehaviour {
@@ -25,14 +26,11 @@ public class Player : MonoBehaviour {
     public void takeDamage(int dmg)
     {
         takenDamage = true;
-        if ((block - dmg) >= 0)
+        if (block > 0)
         {
-            block -= dmg;
-        }
-        else if ((block-dmg) < 0)
-        {
-            dmg = dmg - block;
-            block = 0;
+            double damagePercent = Convert.ToDouble(block) / 100.0;
+            double damageTaken = dmg - (damagePercent * dmg);
+            dmg = Convert.ToInt32(damageTaken);
             if (health - dmg < 0)
             {
                 health = 0;
