@@ -12,6 +12,7 @@ public class BattleUIManager : MonoBehaviour {
     public Text enemyHpText;
     public Text deckText;
     public Text intentionText;
+    public Text defenseText;
 
     void Start () {
     }
@@ -30,6 +31,12 @@ public class BattleUIManager : MonoBehaviour {
         RenderHand();
         RenderDeck();
         RenderIntention();
+        RenderDefense();
+    }
+
+    public void RenderDefense()
+    {
+        defenseText.text = "Defense: " + bm.player.block.ToString() + "%";
     }
 
     public void RenderIntention()
@@ -44,7 +51,7 @@ public class BattleUIManager : MonoBehaviour {
         {
             GameObject cardObj = cm.hand[i];
             cardObj.SetActive(true);
-            cardObj.transform.position = new Vector3(390 + (230 * i), 190, 0);
+            cardObj.transform.position = new Vector3(420 + (230 * i), 190, 0);
         }
     }
 

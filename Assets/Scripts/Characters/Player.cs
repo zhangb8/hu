@@ -22,6 +22,10 @@ public class Player : MonoBehaviour {
     public void addBlock(int blk)
     {
         block += blk;
+        if (block >= 100)
+        {
+            block = 100;
+        }
     }
     public void takeDamage(int dmg)
     {

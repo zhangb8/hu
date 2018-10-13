@@ -29,6 +29,10 @@ public class CardManager : MonoBehaviour
     {
         foreach(GameObject itemObj in im.inventory)
         {
+            if (itemObj == null)
+            {
+                continue;
+            }
             Item item = itemObj.GetComponent<Item>();
             foreach (GameObject co in item.cards)
             {

@@ -15,9 +15,13 @@ public class InventoryManager : MonoBehaviour {
     // adds up weight of all items, sets curweight to it
     public void getWeight()
     {
-        foreach (GameObject o in inventory)
+        for(int i=0; i<inventory.Count; i++)
         {
-
+            GameObject o = inventory[i];
+            if (o == null)
+            {
+                continue;
+            }
             Item item = o.GetComponent<Item>();
             curWeight += item.weight;
         }

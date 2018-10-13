@@ -130,12 +130,16 @@ public class BattleManager : MonoBehaviour {
     }
 
     //called when it is player's turn
-    //draws a card and resets mana
+    //draws a card, resets mana and block
     void startTurn()
     {
         playerTurn = true;
         player.block = 0;
-        while (cm.battleDeck.Count != 0 && cm.hand.Count < 5)
+        while (cm.battleDeck.Count != 0 && cm.hand.Count < 4)
+        {
+            cm.Draw();
+        }
+        if (cm.battleDeck.Count != 0)
         {
             cm.Draw();
         }
