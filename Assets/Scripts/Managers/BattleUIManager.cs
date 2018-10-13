@@ -37,7 +37,6 @@ public class BattleUIManager : MonoBehaviour {
         for (int i = 0; i < cm.hand.Count; i++)
         {
             GameObject cardObj = cm.hand[i];
-            Card card = cardObj.GetComponent<Card>();
             cardObj.SetActive(true);
             cardObj.transform.position = new Vector3(390 + (230 * i), 190, 0);
         }
