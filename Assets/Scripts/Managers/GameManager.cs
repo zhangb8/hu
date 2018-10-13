@@ -39,9 +39,7 @@ public class GameManager : MonoBehaviour {
             GameObject cardObj = cm.hand[i];
             Card card = cardObj.GetComponent<Card>();
             cardObj.SetActive(true);
-            cardObj.transform.position = new Vector3(-4.2f + (1.9f * i), -3.3f, 0);
-            card.sprite.enabled = true;
-            card.box.enabled = true;
+            cardObj.transform.position = new Vector3(390 + (230 * i), 190, 0);
         }
     }
 

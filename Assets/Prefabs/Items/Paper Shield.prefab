@@ -9,17 +9,17 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1505538365835918}
+  m_RootGameObject: {fileID: 1309081674830402}
   m_IsPrefabAsset: 1
---- !u!1 &1505538365835918
+--- !u!1 &1309081674830402
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4438328024746474}
-  - component: {fileID: 114156770810187554}
+  - component: {fileID: 4502992944019222}
+  - component: {fileID: 114393080225365478}
   m_Layer: 0
   m_Name: Paper Shield
   m_TagString: Untagged
@@ -27,12 +27,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4438328024746474
+--- !u!4 &4502992944019222
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1505538365835918}
+  m_GameObject: {fileID: 1309081674830402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.81500876, y: -1.8272767, z: 0.10978879}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,22 +40,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114156770810187554
+--- !u!114 &114393080225365478
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1505538365835918}
+  m_GameObject: {fileID: 1309081674830402}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 94bc99e9a9020a249b2fb8dfd56ae79b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cards:
-  - {fileID: 1522316094342330, guid: 1afe59a1c4910c0499e4263882f37685, type: 2}
-  - {fileID: 1522316094342330, guid: 1afe59a1c4910c0499e4263882f37685, type: 2}
-  - {fileID: 1522316094342330, guid: 1afe59a1c4910c0499e4263882f37685, type: 2}
-  - {fileID: 1522316094342330, guid: 1afe59a1c4910c0499e4263882f37685, type: 2}
-  - {fileID: 1522316094342330, guid: 1afe59a1c4910c0499e4263882f37685, type: 2}
+  - {fileID: 1316414875496560, guid: 1964d28693b3e1b4d88f6789bfc817f4, type: 2}
+  - {fileID: 1316414875496560, guid: 1964d28693b3e1b4d88f6789bfc817f4, type: 2}
+  - {fileID: 1316414875496560, guid: 1964d28693b3e1b4d88f6789bfc817f4, type: 2}
+  - {fileID: 1316414875496560, guid: 1964d28693b3e1b4d88f6789bfc817f4, type: 2}
+  - {fileID: 1316414875496560, guid: 1964d28693b3e1b4d88f6789bfc817f4, type: 2}
   sprite: {fileID: 0}
   weight: 1

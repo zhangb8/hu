@@ -31,14 +31,14 @@ public class Player : MonoBehaviour {
             double damagePercent = Convert.ToDouble(block) / 100.0;
             double damageTaken = dmg - (damagePercent * dmg);
             dmg = Convert.ToInt32(damageTaken);
-            if (health - dmg < 0)
-            {
-                health = 0;
-            }
-            else
-            {
-                health -= dmg;
-            }
+        }
+        if (health - dmg < 0)
+        {
+            health = 0;
+        }
+        else
+        {
+            health -= dmg;
         }
     }
     public void Heal (int heal)

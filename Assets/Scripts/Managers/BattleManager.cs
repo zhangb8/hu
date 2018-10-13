@@ -13,7 +13,6 @@ public class BattleManager : MonoBehaviour {
     public bool playerTurn = true;
     public CardManager cm;
     public InventoryManager im;
-    public string EnemyMove;
 
     // Use this for initialization
     void Start () {
@@ -60,6 +59,7 @@ public class BattleManager : MonoBehaviour {
     //then handles the card
     void onCardUse()
     {
+        print("used card");
         GameObject cardToRemove = null;
         print("card used");
         foreach (GameObject o in cm.hand)
@@ -110,19 +110,20 @@ public class BattleManager : MonoBehaviour {
             print("Not enough mana!");
             return;
         }
-        //this part needs to be reworked
-        //hardcodes how cards are used
-        if (c is Attack)
+        switch (c.type)
         {
-            enemy.takeDamage(c.val);
-        }
-        else if (c is Heal)
-        {
-            player.Heal(c.val);
-        }
-        else if (c is Defense)
-        {
-            player.addBlock(c.val);
+            case "Attack":
+                enemy.takeDamage(c.val);
+                break;
+            case "Heal":
+                player.Heal(c.val);
+                break;
+            case "Defense":
+                player.addBlock(c.val);
+                break;
+            default:
+                print("no type found");
+                break;
         }
         cm.Discard(o);
     }
@@ -138,7 +139,6 @@ public class BattleManager : MonoBehaviour {
             cm.Draw();
         }
         player.mana = player.maxMana;
-        EnemyMove = enemy.Move();
     }
 
     //changes to enemy's turn
@@ -150,6 +150,7 @@ public class BattleManager : MonoBehaviour {
     //enemy turn logic
     void enemyTurn()
     {
+        string EnemyMove = enemy.Move();
         if (EnemyMove.Equals("Attack"))
         {
             player.takeDamage(enemy.dmg);

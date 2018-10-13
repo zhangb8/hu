@@ -4,8 +4,4 @@ using UnityEngine;
 
 public class Attack : Card
 {
-    private void Start()
-    {
-        type = "attack";
-    }
 }
