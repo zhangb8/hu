@@ -2,20 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour {
+public class Enemy : Interactable {
     public int maxHealth;
     public int health;
     public int dmg;
     public int heal;
-
-	// Use this for initialization
-	void Start () {
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public void takeDamage(int dmg)
     {
