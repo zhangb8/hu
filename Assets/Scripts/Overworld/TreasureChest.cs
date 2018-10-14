@@ -4,27 +4,40 @@ using UnityEngine;
 
 public class TreasureChest : MonoBehaviour {
 
-    public BoxCollider2D bc;
+    public PolygonCollider2D bc;
     public List<GameObject> items;
+    public bool triggered = false;
+    public Collider2D contact;
 
 	// Use this for initialization
 	void Start () {
-        bc = GetComponent<BoxCollider2D>();
+        bc = GetComponent<PolygonCollider2D>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	}
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "player")
+        if (triggered)
         {
-            if (Input.GetKeyDown("e"))
+            if (contact.gameObject.name == "Player")
             {
-                print("opening chest");
+                if (Input.GetKeyDown("e"))
+                {
+                    print("opening chest");
+                }
             }
         }
+	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        triggered = true;
+        contact = collision;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        triggered = false;
+        contact = null;
     }
 
     public void giveItems()
