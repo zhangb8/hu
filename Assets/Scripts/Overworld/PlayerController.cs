@@ -33,5 +33,14 @@ public class PlayerController : MonoBehaviour {
         {
             rb.velocity = new Vector2(rb.velocity.x, 0f);
         }
+
+        if (Input.GetAxisRaw("Horizontal") < -0.5f)
+        {
+            gameObject.transform.rotation = new Quaternion(0, 180, 0, 0);
+        }
+        else if (Input.GetAxisRaw("Horizontal") > 0.5f)
+        {
+            gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
+        }
     }
 }

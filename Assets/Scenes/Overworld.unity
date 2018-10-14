@@ -1123,6 +1123,31 @@ PolygonCollider2D:
       - {x: -0.175, y: -2.45}
       - {x: 0.024999999, y: -2.4299998}
       - {x: 0.065, y: -2.4199998}
+--- !u!61 &767823357
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 767823349}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.1416826, y: -0.133196}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.81, y: 5.02}
+    newSize: {x: 7.2, y: 7.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.7444309, y: 2.0135667}
+  m_EdgeRadius: 0
 --- !u!1 &1054445920
 GameObject:
   m_ObjectHideFlags: 0
@@ -1285,7 +1310,7 @@ BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1277743248}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -1638,15 +1663,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4019760891978562, guid: edfe45dfcfc87754a9927208a96caed1, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4019760891978562, guid: edfe45dfcfc87754a9927208a96caed1, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4019760891978562, guid: edfe45dfcfc87754a9927208a96caed1, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4019760891978562, guid: edfe45dfcfc87754a9927208a96caed1, type: 2}
       propertyPath: m_LocalRotation.w
@@ -1671,6 +1696,14 @@ Prefab:
     - target: {fileID: 61837079475183182, guid: edfe45dfcfc87754a9927208a96caed1,
         type: 2}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019760891978562, guid: edfe45dfcfc87754a9927208a96caed1, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019760891978562, guid: edfe45dfcfc87754a9927208a96caed1, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
