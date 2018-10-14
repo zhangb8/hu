@@ -1310,7 +1310,7 @@ BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1277743248}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -1342,6 +1342,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bc: {fileID: 1277743252}
   items: []
+  triggered: 0
+  contact: {fileID: 0}
 --- !u!4 &1319002551 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4791636841389458, guid: b1a66b87ee0e3244dbd27fe20d959547,
