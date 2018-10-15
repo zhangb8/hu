@@ -8,9 +8,13 @@ public class Enemy : Interactable {
     public int dmg;
     public int heal;
 
+    public override void Interact()
+    {
+        print("interacting w/ enemy");
+    }
+
     public void takeDamage(int dmg)
     {
-
         if (health - dmg < 0)
         {
             health = 0;

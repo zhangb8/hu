@@ -12,11 +12,6 @@ public class CardManager : MonoBehaviour
     public GameObject deckObj;
     public InventoryManager im;
 
-    public void Start()
-    {
-
-    }
-
     public void InitDeck()
     {
         BuildDeck();

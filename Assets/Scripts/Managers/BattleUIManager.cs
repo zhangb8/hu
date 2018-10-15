@@ -20,11 +20,11 @@ public class BattleUIManager : MonoBehaviour {
     //renders everything every frame (pretty bad for runtime)
     void Update()
     {
-        Render();
+        RenderBattle();
     }
 
     //Renders everything at once
-    public void Render()
+    public void RenderBattle()
     {
         RenderHP();
         RenderMana();

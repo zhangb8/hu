@@ -10,13 +10,23 @@ public class Player : MonoBehaviour {
     public int mana;
     public int block;
     public bool takenDamage = false;
+    public PlayerController pc;
 
     // Use this for initialization
     void Start () {
+        pc = GetComponent<PlayerController>();
     }
 	
 	// Update is called once per frame
 	void Update () {
+        if (GameManager.gameState == "CardBattle")
+        {
+            pc.enabled = false;
+        }
+        else if (GameManager.gameState == "Overworld")
+        {
+            pc.enabled = true;
+        }
 		
 	}
     public void addBlock(int blk)

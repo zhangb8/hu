@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-
     public PolygonCollider2D bc;
     public bool triggered = false;
     public Collider2D contact;
@@ -28,11 +27,13 @@ public class Interactable : MonoBehaviour
             {
                 if (contact.gameObject.name == "Player" && Input.GetKeyDown("e"))
                 {
-                    print("opening chest");
+                    Interact();
                 }
             }
         }
     }
+
+    public virtual void Interact() { }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

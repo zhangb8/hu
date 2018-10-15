@@ -129,6 +129,14 @@ public class BattleManager : MonoBehaviour {
         cm.Discard(o);
     }
 
+    public void reshuffle()
+    {
+        if (player.reduceMana(3) != -1)
+        {
+            cm.DiscardToDeck();
+        }
+    }
+
     //called when it is player's turn
     //draws a card, resets mana and block
     void startTurn()
@@ -163,14 +171,6 @@ public class BattleManager : MonoBehaviour {
         else if (enemyMove.Equals("Healing"))
         {
             enemy.Heal(enemy.heal);
-        }
-    }
-
-    public void reshuffle()
-    {
-        if (player.reduceMana(3) != -1)
-        {
-            cm.DiscardToDeck();
         }
     }
 }
