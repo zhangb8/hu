@@ -421,7 +421,7 @@ Prefab:
         type: 2}
       propertyPath: roomPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 1013262976299488, guid: b6fbe09f73266014282cc0f7953436ac,
+      objectReference: {fileID: 1246565766180816, guid: dacfec6a5056217489ae075c8bf44d0c,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91e93fe8b66d2dc4a826935a3ea2c0ee, type: 2}

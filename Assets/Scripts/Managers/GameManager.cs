@@ -25,8 +25,8 @@ public class GameManager : MonoBehaviour {
     public delegate void ChangedScene(string gs);
     public static event ChangedScene OnChange;
 
-	// Use this for initialization
-	void Start () {
+    private void Awake()
+    {
         if (ins == null)
         {
             ins = gameObject;
@@ -36,6 +36,10 @@ public class GameManager : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+    }
+
+    // Use this for initialization
+    void Start () {
         SceneManager.activeSceneChanged += GetScene;
         currentScene = SceneManager.GetActiveScene();
         gameState = currentScene.name;
@@ -46,7 +50,11 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (gameState == "CardBattle" && bm.victory)
+        {
+            Destroy(bm.enemy.gameObject);
+            loadOverworld();
+        }
 	}
 
     void InitGM()
@@ -64,14 +72,16 @@ public class GameManager : MonoBehaviour {
     {
         currentScene = next;
         gameState = next.name;
-        print("calling onchange from gm");
-        print("gamestate = " + gameState);
         OnChange(gameState);
     }
 
     public static void loadBattle()
     {
         SceneManager.LoadScene("CardBattle");
+    }
 
+    public static void loadOverworld()
+    {
+        SceneManager.LoadScene("Overworld");
     }
 }

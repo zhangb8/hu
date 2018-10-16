@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 //leo leo on the wall who's the fairest of them all
 //brian brian on my roof who's the biggest goofy goof
 public class BattleManager : MonoBehaviour {
@@ -12,6 +13,11 @@ public class BattleManager : MonoBehaviour {
     public CardManager cm;
     public InventoryManager im;
     public string enemyMove;
+    public bool victory = false;
+
+    //EVENTS AND DELEGATES
+    public delegate void BattleEnded();
+    public static event BattleEnded onBattleEnd;
 
     // Use this for initialization
     void Start () {
@@ -42,6 +48,11 @@ public class BattleManager : MonoBehaviour {
                 enemyTurn();
                 startTurn();
             }
+            if (enemy.health == 0)
+            {
+                //onBattleEnd();
+                victory = true;
+            }
         }
     }
 
@@ -70,7 +81,6 @@ public class BattleManager : MonoBehaviour {
     void onCardDiscard()
     {
         GameObject cardToRemove = null;
-        print("card discarded");
         foreach (GameObject o in cm.hand)
         {
             Card c = o.GetComponent<Card>();

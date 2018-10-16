@@ -7,16 +7,10 @@ public class MapManager : MonoBehaviour {
     public List<GameObject> roomPrefabs;
     public List<GameObject> rooms;
     public GameObject currentRoom;
-
-	// Use this for initialization
-	void Start () {
+    private void Awake()
+    {
         GameManager.OnChange += InitMap;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    }
 
     void InitMap(string gameState)
     {

@@ -24,9 +24,6 @@ public class BattleUIManager : MonoBehaviour {
         GameManager.OnChange += StartBattle;
     }
 
-    void Start () {
-    }
-
     //renders everything every frame (pretty bad for runtime)
     void Update()
     {
@@ -63,7 +60,6 @@ public class BattleUIManager : MonoBehaviour {
 
     void StartBattle(string gameState)
     {
-        print("calling changedScene in BUIM");
         if (gameState == "CardBattle")
         {
             //this is fucking disgusting
