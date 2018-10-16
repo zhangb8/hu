@@ -15,6 +15,7 @@ public class Player : MonoBehaviour {
     // Use this for initialization
     void Start () {
         pc = GetComponent<PlayerController>();
+        DontDestroyOnLoad(this);
     }
 	
 	// Update is called once per frame

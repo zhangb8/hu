@@ -14,13 +14,32 @@ public class BattleUIManager : MonoBehaviour {
     public Text intentionText;
     public Text defenseText;
 
+    private void Awake()
+    {
+        GameManager.OnChange += ChangedScene;
+    }
+
     void Start () {
     }
 
     //renders everything every frame (pretty bad for runtime)
     void Update()
     {
-        RenderBattle();
+        if (GameManager.gameState == "CardBattle")
+        {
+            RenderBattle();
+        }
+    }
+
+    void ChangedScene(string gameState)
+    {
+        print("calling changedScene in BUIM");
+        if (gameState == "CardBattle")
+        {
+            //this is fucking disgusting
+            bm = GameObject.FindGameObjectWithTag("Managers").GetComponent<BattleManager>();
+            cm = GameObject.FindGameObjectWithTag("Managers").GetComponent<CardManager>();
+        }
     }
 
     //Renders everything at once

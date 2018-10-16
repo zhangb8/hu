@@ -11,6 +11,9 @@ public class Enemy : Interactable {
     public override void Interact()
     {
         print("interacting w/ enemy");
+        gameObject.transform.parent = null;
+        DontDestroyOnLoad(gameObject);
+        GameManager.loadBattle();
     }
 
     public void takeDamage(int dmg)

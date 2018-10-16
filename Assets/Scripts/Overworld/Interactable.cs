@@ -25,7 +25,7 @@ public class Interactable : MonoBehaviour
         {
             if (triggered)
             {
-                if (contact.gameObject.name == "Player" && Input.GetKeyDown("e"))
+                if (contact.gameObject.tag == "player" && Input.GetKeyDown("e"))
                 {
                     Interact();
                 }

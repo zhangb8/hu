@@ -3,14 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Room : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public Interactable[] interactables;
+    public Enemy[] enemies;
+    public SpriteRenderer background;
+    public PolygonCollider2D walls;
 }

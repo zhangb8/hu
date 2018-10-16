@@ -17,30 +17,37 @@ public class BattleManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        Card.cardUsed += onCardUse;
-        Card.cardDiscarded += onCardDiscard;
-        cm.InitDeck();
-        startTurn();
+        if (GameManager.gameState == "CardBattle")
+        {
+            Card.cardUsed += onCardUse;
+            Card.cardDiscarded += onCardDiscard;
+            cm.InitDeck();
+            startTurn();
+        }
     }
 
 	// Update is called once per frame
 	void Update () {
-		if (enemy.health == 0)
+        if (GameManager.gameState == "CardBattle")
         {
-            Victory();
-        }
+            if (enemy.health == 0)
+            {
+                Victory();
+            }
 
-        else if (player.health == 0)
-        {
-            gameOver();
-        }
+            else if (player.health == 0)
+            {
+                gameOver();
+            }
 
-        if (playerTurn == false)
-        {
-            enemyTurn();
-            startTurn();
+            if (playerTurn == false)
+            {
+                enemyTurn();
+                startTurn();
+            }
         }
-	}
+    }
+        
 
     //displays game over screen
     void gameOver()
