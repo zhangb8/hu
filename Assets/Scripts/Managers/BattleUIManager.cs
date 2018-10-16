@@ -13,10 +13,15 @@ public class BattleUIManager : MonoBehaviour {
     public Text deckText;
     public Text intentionText;
     public Text defenseText;
+    public Image gameOverScreen;
+    public Image victoryScreen;
+    public Button endTurn;
+    public Button reshuffle;
+
 
     private void Awake()
     {
-        GameManager.OnChange += ChangedScene;
+        GameManager.OnChange += StartBattle;
     }
 
     void Start () {
@@ -29,9 +34,34 @@ public class BattleUIManager : MonoBehaviour {
         {
             RenderBattle();
         }
+
+        if (bm.enemy.health == 0)
+        {
+            Victory();
+        }
+
+        else if (bm.player.health == 0)
+        {
+            gameOver();
+        }
+
     }
 
-    void ChangedScene(string gameState)
+    //displays game over screen
+    void gameOver()
+    {
+        gameOverScreen.enabled = true;
+    }
+
+    //displays victory screen
+    void Victory()
+    {
+        victoryScreen.enabled = true;
+
+    }
+
+
+    void StartBattle(string gameState)
     {
         print("calling changedScene in BUIM");
         if (gameState == "CardBattle")
@@ -39,6 +69,8 @@ public class BattleUIManager : MonoBehaviour {
             //this is fucking disgusting
             bm = GameObject.FindGameObjectWithTag("Managers").GetComponent<BattleManager>();
             cm = GameObject.FindGameObjectWithTag("Managers").GetComponent<CardManager>();
+            endTurn.onClick.AddListener(bm.endTurn);
+            reshuffle.onClick.AddListener(bm.reshuffle);
         }
     }
 

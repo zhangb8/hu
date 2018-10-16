@@ -7,7 +7,10 @@ public class Enemy : Interactable {
     public int health;
     public int dmg;
     public int heal;
-
+    public Vector2 overWorldPosition;
+    public Vector2 battlePosition;
+    public Vector2 overWorldScale;
+    public Vector2 battleScale;
     public override void Interact()
     {
         print("interacting w/ enemy");

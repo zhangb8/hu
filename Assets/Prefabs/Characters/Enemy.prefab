@@ -52,10 +52,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f739b5e56e561d4e80ea0c6513791b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bc: {fileID: 0}
+  triggered: 0
+  contact: {fileID: 0}
   maxHealth: 40
   health: 40
   dmg: 10
   heal: 7
+  overWorldPosition: {x: 3.42, y: 2.26}
+  battlePosition: {x: 4.27, y: 0.43}
+  overWorldScale: {x: 0.214, y: 0.214}
+  battleScale: {x: 0.194, y: 0.194}
 --- !u!212 &212251749472595762
 SpriteRenderer:
   m_ObjectHideFlags: 1

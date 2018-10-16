@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4288590366236686}
   - component: {fileID: 114469019076039754}
   - component: {fileID: 212172485664457678}
-  - component: {fileID: 114517838071451606}
   - component: {fileID: 50070067130165464}
   - component: {fileID: 60206669606992282}
   - component: {fileID: 61366603863564110}
@@ -251,24 +250,10 @@ MonoBehaviour:
   block: 0
   takenDamage: 0
   pc: {fileID: 0}
---- !u!114 &114517838071451606
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1463502644528602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99541c6a265db0b45b59865f183d641f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 0
-  health: 0
-  maxMana: 0
-  mana: 0
-  block: 0
-  takenDamage: 0
-  pc: {fileID: 0}
+  overWorldPosition: {x: -4.8, y: 0}
+  battlePosition: {x: -5.05, y: 0.33}
+  overWorldScale: {x: 0.4717, y: 0.4717}
+  battleScale: {x: 0.9393, y: 0.9393}
 --- !u!212 &212172485664457678
 SpriteRenderer:
   m_ObjectHideFlags: 1

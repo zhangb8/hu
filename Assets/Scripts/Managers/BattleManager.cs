@@ -8,8 +8,6 @@ public class BattleManager : MonoBehaviour {
 
     public Enemy enemy;
     public Player player;
-    public Image gameOverScreen;
-    public Image victoryScreen;
     public bool playerTurn = true;
     public CardManager cm;
     public InventoryManager im;
@@ -17,10 +15,19 @@ public class BattleManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        if (GameManager.gameState == "CardBattle")
+        GameManager.OnChange += StartBattle;
+        Card.cardUsed += onCardUse;
+        Card.cardDiscarded += onCardDiscard;
+    }
+
+    void StartBattle(string gameState)
+    {
+        if (gameState == "CardBattle")
         {
-            Card.cardUsed += onCardUse;
-            Card.cardDiscarded += onCardDiscard;
+            enemy = GameObject.FindGameObjectWithTag("enemy").GetComponent<Enemy>();
+            enemy.gameObject.transform.localPosition = enemy.battlePosition;
+            enemy.gameObject.transform.localScale = enemy.battleScale;
+            cm.deckObj = GameObject.FindGameObjectWithTag("deck");
             cm.InitDeck();
             startTurn();
         }
@@ -30,36 +37,12 @@ public class BattleManager : MonoBehaviour {
 	void Update () {
         if (GameManager.gameState == "CardBattle")
         {
-            if (enemy.health == 0)
-            {
-                Victory();
-            }
-
-            else if (player.health == 0)
-            {
-                gameOver();
-            }
-
             if (playerTurn == false)
             {
                 enemyTurn();
                 startTurn();
             }
         }
-    }
-        
-
-    //displays game over screen
-    void gameOver()
-    {
-        gameOverScreen.enabled = true;
-    }
-
-    //displays victory screen
-    void Victory()
-    {
-        victoryScreen.enabled = true;
-
     }
 
     //this is called when a card is clicked and the event is called

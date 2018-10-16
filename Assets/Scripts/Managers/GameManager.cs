@@ -36,10 +36,12 @@ public class GameManager : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-        SceneManager.activeSceneChanged += GetActiveScene;
+        SceneManager.activeSceneChanged += GetScene;
         currentScene = SceneManager.GetActiveScene();
         gameState = currentScene.name;
         InstantiatePlayer();
+        bm.player = player.GetComponent<Player>();
+        OnChange(gameState);
     }
 	
 	// Update is called once per frame
@@ -58,7 +60,7 @@ public class GameManager : MonoBehaviour {
         player = Instantiate(playerPrefab) as GameObject;
     }
 
-    public void GetActiveScene(Scene current, Scene next)
+    public void GetScene(Scene current, Scene next)
     {
         currentScene = next;
         gameState = next.name;

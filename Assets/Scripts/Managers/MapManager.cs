@@ -10,19 +10,25 @@ public class MapManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        if (GameManager.gameState == "Overworld")
-        {
-            for (int i=0; i<roomPrefabs.Count; i++)
-            {
-                GameObject room = Instantiate(roomPrefabs[i]) as GameObject;
-                rooms.Add(room);
-            }
-        }
-        currentRoom = rooms[0];
+        GameManager.OnChange += InitMap;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
+    void InitMap(string gameState)
+    {
+        print("calling initmap");
+        if (gameState == "Overworld")
+        {
+            for (int i = 0; i < roomPrefabs.Count; i++)
+            {
+                GameObject room = Instantiate(roomPrefabs[i]) as GameObject;
+                rooms.Add(room);
+            }
+            currentRoom = rooms[0];
+        }
+    }
 }

@@ -11,11 +11,16 @@ public class Player : MonoBehaviour {
     public int block;
     public bool takenDamage = false;
     public PlayerController pc;
+    public Vector2 overWorldPosition;
+    public Vector2 battlePosition;
+    public Vector2 overWorldScale;
+    public Vector2 battleScale;
 
     // Use this for initialization
     void Start () {
         pc = GetComponent<PlayerController>();
         DontDestroyOnLoad(this);
+        GameManager.OnChange += ChangeScene;
     }
 	
 	// Update is called once per frame
@@ -27,9 +32,24 @@ public class Player : MonoBehaviour {
         else if (GameManager.gameState == "Overworld")
         {
             pc.enabled = true;
+            overWorldPosition = transform.localPosition;
         }
 		
 	}
+
+    void ChangeScene(string gamestate)
+    {
+        if (gamestate == "Overworld")
+        {
+            transform.localPosition = overWorldPosition;
+            transform.localScale = overWorldScale;
+        }
+        else if (gamestate == "CardBattle")
+        {
+            transform.localPosition = battlePosition;
+            transform.localScale = battleScale;
+        }
+    }
     public void addBlock(int blk)
     {
         block += blk;

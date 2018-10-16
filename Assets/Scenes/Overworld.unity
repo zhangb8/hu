@@ -190,6 +190,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &884532895 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114350255548733134, guid: 91e93fe8b66d2dc4a826935a3ea2c0ee,
+    type: 2}
+  m_PrefabInternal: {fileID: 2047951928}
+  m_Script: {fileID: 11500000, guid: 3c007d5a7eb736e4d81c986c3e0698e5, type: 3}
 --- !u!1 &1054445920
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,6 +412,17 @@ Prefab:
       propertyPath: m_TagString
       value: Managers
       objectReference: {fileID: 0}
+    - target: {fileID: 114522198138659160, guid: 91e93fe8b66d2dc4a826935a3ea2c0ee,
+        type: 2}
+      propertyPath: im
+      value: 
+      objectReference: {fileID: 884532895}
+    - target: {fileID: 114385006866228110, guid: 91e93fe8b66d2dc4a826935a3ea2c0ee,
+        type: 2}
+      propertyPath: roomPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 1013262976299488, guid: b6fbe09f73266014282cc0f7953436ac,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91e93fe8b66d2dc4a826935a3ea2c0ee, type: 2}
   m_IsPrefabAsset: 0
