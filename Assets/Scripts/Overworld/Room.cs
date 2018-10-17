@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Room : MonoBehaviour {
     public Interactable[] interactables;
-    public Enemy[] enemies;
+    public List<Enemy> enemies;
     public SpriteRenderer background;
     public PolygonCollider2D walls;
 }

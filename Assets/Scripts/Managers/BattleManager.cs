@@ -29,6 +29,8 @@ public class BattleManager : MonoBehaviour {
     {
         if (gameState == "CardBattle")
         {
+            playerTurn = true;
+            victory = false;
             enemy = GameObject.FindGameObjectWithTag("enemy").GetComponent<Enemy>();
             enemy.gameObject.transform.localPosition = enemy.battlePosition;
             enemy.gameObject.transform.localScale = enemy.battleScale;
