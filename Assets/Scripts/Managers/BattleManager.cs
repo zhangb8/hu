@@ -21,12 +21,11 @@ public class BattleManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        GameManager.OnChange += StartBattle;
         Card.cardUsed += onCardUse;
         Card.cardDiscarded += onCardDiscard;
     }
 
-    void StartBattle(string gameState)
+    public void StartBattle(string gameState)
     {
         if (gameState == "CardBattle")
         {
@@ -41,7 +40,7 @@ public class BattleManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        if (GameManager.gameState == "CardBattle")
+        if (GameManager.gameState == "CardBattle" && !victory)
         {
             if (playerTurn == false)
             {
@@ -50,8 +49,9 @@ public class BattleManager : MonoBehaviour {
             }
             if (enemy.health == 0)
             {
-                //onBattleEnd();
                 victory = true;
+                Destroy(enemy.gameObject);
+                onBattleEnd();
             }
         }
     }

@@ -19,9 +19,12 @@ public class BattleUIManager : MonoBehaviour {
     public Button reshuffle;
 
 
-    private void Awake()
+    private void Start()
     {
         GameManager.OnChange += StartBattle;
+        bm = GameObject.FindGameObjectWithTag("Managers").GetComponent<BattleManager>();
+        cm = GameObject.FindGameObjectWithTag("Managers").GetComponent<CardManager>();
+
     }
 
     //renders everything every frame (pretty bad for runtime)
@@ -73,12 +76,15 @@ public class BattleUIManager : MonoBehaviour {
     //Renders everything at once
     public void RenderBattle()
     {
-        RenderHP();
-        RenderMana();
-        RenderHand();
-        RenderDeck();
-        RenderIntention();
-        RenderDefense();
+        if (GameManager.gameState == "CardBattle")
+        {
+            RenderHP();
+            RenderMana();
+            RenderHand();
+            RenderDeck();
+            RenderIntention();
+            RenderDefense();
+        }
     }
 
     public void RenderDefense()

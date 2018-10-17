@@ -7,12 +7,12 @@ public class MapManager : MonoBehaviour {
     public List<GameObject> roomPrefabs;
     public List<GameObject> rooms;
     public GameObject currentRoom;
-    private void Awake()
+    private void Start()
     {
-        GameManager.OnChange += InitMap;
+        
     }
 
-    void InitMap(string gameState)
+    public void InitMap(string gameState)
     {
         print("calling initmap");
         if (gameState == "Overworld")

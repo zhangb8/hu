@@ -20,7 +20,7 @@ public class Player : MonoBehaviour {
     void Start () {
         pc = GetComponent<PlayerController>();
         DontDestroyOnLoad(this);
-        GameManager.OnChange += ChangeScene;
+        
     }
 	
 	// Update is called once per frame
@@ -37,7 +37,7 @@ public class Player : MonoBehaviour {
 		
 	}
 
-    void ChangeScene(string gamestate)
+    public void ChangeScene(string gamestate)
     {
         if (gamestate == "Overworld")
         {

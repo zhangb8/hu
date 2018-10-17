@@ -40,22 +40,23 @@ public class GameManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
+        //Setting up events
         SceneManager.activeSceneChanged += GetScene;
+        BattleManager.onBattleEnd += loadOverworld;
+        OnChange += mm.InitMap;
+        OnChange += bm.StartBattle;
+
+        //Initailizing fields
         currentScene = SceneManager.GetActiveScene();
         gameState = currentScene.name;
         InstantiatePlayer();
+        OnChange += player.GetComponent<Player>().ChangeScene;
         bm.player = player.GetComponent<Player>();
         OnChange(gameState);
     }
 	
 	// Update is called once per frame
-	void Update () {
-		if (gameState == "CardBattle" && bm.victory)
-        {
-            Destroy(bm.enemy.gameObject);
-            loadOverworld();
-        }
-	}
 
     void InitGM()
     {
@@ -72,16 +73,20 @@ public class GameManager : MonoBehaviour {
     {
         currentScene = next;
         gameState = next.name;
+        foreach (System.Delegate d in OnChange.GetInvocationList())
+        {
+            print(d.ToString());
+        }
         OnChange(gameState);
     }
 
     public static void loadBattle()
     {
-        SceneManager.LoadScene("CardBattle");
+        SceneManager.LoadSceneAsync("CardBattle");
     }
 
     public static void loadOverworld()
     {
-        SceneManager.LoadScene("Overworld");
+        SceneManager.LoadSceneAsync("Overworld");
     }
 }
