@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour {
         BattleManager.onBattleEnd += loadOverworld;
         OnChange += mm.InitMap;
         OnChange += bm.StartBattle;
+        BattleManager.onBattleEnd += cm.ClearCards;
 
         //Initailizing fields
         currentScene = SceneManager.GetActiveScene();

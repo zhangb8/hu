@@ -18,13 +18,14 @@ public class BattleUIManager : MonoBehaviour {
     public Button endTurn;
     public Button reshuffle;
 
-
     private void Start()
     {
         GameManager.OnChange += StartBattle;
+        BattleManager.onBattleEnd += EndBattle;
         bm = GameObject.FindGameObjectWithTag("Managers").GetComponent<BattleManager>();
         cm = GameObject.FindGameObjectWithTag("Managers").GetComponent<CardManager>();
-
+        endTurn.onClick.AddListener(bm.endTurn);
+        reshuffle.onClick.AddListener(bm.reshuffle);
     }
 
     //renders everything every frame (pretty bad for runtime)
@@ -44,7 +45,6 @@ public class BattleUIManager : MonoBehaviour {
         {
             gameOver();
         }
-
     }
 
     //displays game over screen
@@ -71,6 +71,12 @@ public class BattleUIManager : MonoBehaviour {
             endTurn.onClick.AddListener(bm.endTurn);
             reshuffle.onClick.AddListener(bm.reshuffle);
         }
+    }
+
+    void EndBattle()
+    {
+        GameManager.OnChange -= StartBattle;
+        BattleManager.onBattleEnd -= EndBattle;
     }
 
     //Renders everything at once

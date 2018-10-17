@@ -39,6 +39,14 @@ public class CardManager : MonoBehaviour
         }
     }
 
+    public void ClearCards()
+    {
+        battleDeck.Clear();
+        deck.Clear();
+        hand.Clear();
+        discard.Clear();
+    }
+
     //enqueues everything in deck to battledeck
     public void EnqueueBattleDeck(List<GameObject> d)
     {
