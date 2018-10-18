@@ -11,7 +11,6 @@ public class BattleManager : MonoBehaviour {
     public Player player;
     public bool playerTurn = true;
     public CardManager cm;
-    public InventoryManager im;
     public string enemyMove;
     public bool victory = false;
 
@@ -21,23 +20,28 @@ public class BattleManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        cm = GameManager.ins.GetComponent<CardManager>();
         Card.cardUsed += onCardUse;
         Card.cardDiscarded += onCardDiscard;
+        onBattleEnd += GameManager.loadOverworld;
+        onBattleEnd += cm.ClearCards;
+        player = GameObject.FindGameObjectWithTag("player").GetComponent<Player>();
+        enemy = GameObject.FindGameObjectWithTag("enemy").GetComponent<Enemy>();
+        StartBattle();
     }
 
-    public void StartBattle(string gameState)
+    public void StartBattle()
     {
-        if (gameState == "CardBattle")
-        {
-            playerTurn = true;
-            victory = false;
-            enemy = GameObject.FindGameObjectWithTag("enemy").GetComponent<Enemy>();
-            enemy.gameObject.transform.localPosition = enemy.battlePosition;
-            enemy.gameObject.transform.localScale = enemy.battleScale;
-            cm.deckObj = GameObject.FindGameObjectWithTag("deck");
-            cm.InitDeck();
-            startTurn();
-        }
+        
+        playerTurn = true;
+        victory = false;
+        enemy = GameObject.FindGameObjectWithTag("enemy").GetComponent<Enemy>();
+        enemy.gameObject.transform.localPosition = enemy.battlePosition;
+        enemy.gameObject.transform.localScale = enemy.battleScale;
+        cm.deckObj = GameObject.FindGameObjectWithTag("deck");
+        cm.InitDeck();
+        startTurn();
+        
     }
 
 	// Update is called once per frame
@@ -51,11 +55,20 @@ public class BattleManager : MonoBehaviour {
             }
             if (enemy.health == 0)
             {
-                victory = true;
-                Destroy(enemy.gameObject);
-                onBattleEnd();
+                EndBattle();
             }
         }
+    }
+
+    void EndBattle()
+    {
+        victory = true;
+        Destroy(enemy.gameObject);
+        onBattleEnd();
+        Card.cardUsed -= onCardUse;
+        Card.cardDiscarded -= onCardDiscard;
+        onBattleEnd -= GameManager.loadOverworld;
+        onBattleEnd -= cm.ClearCards;
     }
 
     //this is called when a card is clicked and the event is called

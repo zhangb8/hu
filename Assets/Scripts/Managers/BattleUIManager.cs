@@ -22,8 +22,7 @@ public class BattleUIManager : MonoBehaviour {
     {
         GameManager.OnChange += StartBattle;
         BattleManager.onBattleEnd += EndBattle;
-        bm = GameObject.FindGameObjectWithTag("Managers").GetComponent<BattleManager>();
-        cm = GameObject.FindGameObjectWithTag("Managers").GetComponent<CardManager>();
+        cm = GameManager.ins.GetComponent<CardManager>();
         endTurn.onClick.AddListener(bm.endTurn);
         reshuffle.onClick.AddListener(bm.reshuffle);
     }

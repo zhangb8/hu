@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour {
     //MANAGERS
     public CardManager cm;
     public InventoryManager im;
-    public BattleManager bm;
     public MapManager mm;
 
     //OBJECTS 
@@ -43,22 +42,16 @@ public class GameManager : MonoBehaviour {
 
         //Setting up events
         SceneManager.activeSceneChanged += GetScene;
-        BattleManager.onBattleEnd += loadOverworld;
         OnChange += mm.InitMap;
-        OnChange += bm.StartBattle;
-        BattleManager.onBattleEnd += cm.ClearCards;
 
         //Initailizing fields
         currentScene = SceneManager.GetActiveScene();
         gameState = currentScene.name;
         InstantiatePlayer();
         OnChange += player.GetComponent<Player>().ChangeScene;
-        bm.player = player.GetComponent<Player>();
         OnChange(gameState);
     }
 	
-	// Update is called once per frame
-
     void InitGM()
     {
         ins = gameObject;
@@ -74,10 +67,6 @@ public class GameManager : MonoBehaviour {
     {
         currentScene = next;
         gameState = next.name;
-        foreach (System.Delegate d in OnChange.GetInvocationList())
-        {
-            print(d.ToString());
-        }
         OnChange(gameState);
     }
 
