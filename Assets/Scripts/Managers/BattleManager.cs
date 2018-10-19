@@ -26,6 +26,7 @@ public class BattleManager : MonoBehaviour {
         onBattleEnd += GameManager.loadOverworld;
         onBattleEnd += cm.ClearCards;
         player = GameObject.FindGameObjectWithTag("player").GetComponent<Player>();
+        player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         enemy = GameObject.FindGameObjectWithTag("enemy").GetComponent<Enemy>();
         StartBattle();
     }
