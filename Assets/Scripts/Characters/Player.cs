@@ -19,33 +19,28 @@ public class Player : MonoBehaviour {
     // Use this for initialization
     void Start () {
         pc = GetComponent<PlayerController>();
-        DontDestroyOnLoad(this);
-        
+        DontDestroyOnLoad(this);        
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (GameManager.gameState == "CardBattle")
+        if (GameManager.gameState == "Overworld")
         {
-            pc.enabled = false;
-        }
-        else if (GameManager.gameState == "Overworld")
-        {
-            pc.enabled = true;
             overWorldPosition = transform.localPosition;
         }
-		
-	}
+    }
 
     public void ChangeScene(string gamestate)
     {
         if (gamestate == "Overworld")
         {
+            pc.enabled = true;
             transform.localPosition = overWorldPosition;
             transform.localScale = overWorldScale;
         }
         else if (gamestate == "CardBattle")
         {
+            pc.enabled = false;
             transform.localPosition = battlePosition;
             transform.localScale = battleScale;
         }

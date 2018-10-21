@@ -15,6 +15,7 @@ public class Enemy : Interactable {
     {
         print("interacting w/ enemy");
         gameObject.transform.parent = null;
+        gameObject.GetComponent<PolygonCollider2D>().enabled = false;
         DontDestroyOnLoad(gameObject);
         GameManager.loadBattle();
     }

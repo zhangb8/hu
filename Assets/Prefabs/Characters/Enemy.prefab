@@ -544,8 +544,8 @@ MonoBehaviour:
   pc: {fileID: 0}
   triggered: 0
   contact: {fileID: 0}
-  maxHealth: 10
-  health: 10
+  maxHealth: 40
+  health: 40
   dmg: 10
   heal: 7
   overWorldPosition: {x: 3.42, y: 0.1577582}

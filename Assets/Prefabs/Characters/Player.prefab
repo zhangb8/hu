@@ -249,7 +249,7 @@ MonoBehaviour:
   mana: 5
   block: 0
   takenDamage: 0
-  pc: {fileID: 0}
+  pc: {fileID: 114196881136042690}
   overWorldPosition: {x: -4.8, y: 0}
   battlePosition: {x: -5.05, y: 0.33}
   overWorldScale: {x: 0.4717, y: 0.4717}
