@@ -64,9 +64,8 @@ public class BattleUIManager : MonoBehaviour {
     {
         if (gameState == "CardBattle")
         {
-            //this is fucking disgusting
-            bm = GameObject.FindGameObjectWithTag("Managers").GetComponent<BattleManager>();
-            cm = GameObject.FindGameObjectWithTag("Managers").GetComponent<CardManager>();
+            bm = GameManager.ins.GetComponent<BattleManager>();
+            cm = GameManager.ins.GetComponent<CardManager>();
             endTurn.onClick.AddListener(bm.endTurn);
             reshuffle.onClick.AddListener(bm.reshuffle);
         }
