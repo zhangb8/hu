@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    public PolygonCollider2D bc;
+    public PolygonCollider2D pc;
     public bool triggered = false;
     public Collider2D contact;
 
@@ -15,7 +15,7 @@ public class Interactable : MonoBehaviour
 
     void getCollider()
     {
-        bc = GetComponent<PolygonCollider2D>();
+        pc = GetComponent<PolygonCollider2D>();
     }
 
     // Update is called once per frame

@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Room : MonoBehaviour {
-    public Interactable[] interactables;
-    public List<Enemy> enemies;
+    public List<GameObject> interactables;
+    public List<GameObject> enemies;
     public SpriteRenderer background;
-    public PolygonCollider2D walls;
+    public Collider2D walls;
+
 }

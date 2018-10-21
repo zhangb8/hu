@@ -376,6 +376,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114385006866228110, guid: 91e93fe8b66d2dc4a826935a3ea2c0ee,
+        type: 2}
+      propertyPath: rooms.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114385006866228110, guid: 91e93fe8b66d2dc4a826935a3ea2c0ee,
+        type: 2}
+      propertyPath: roomPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4128360267588840, guid: 91e93fe8b66d2dc4a826935a3ea2c0ee, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.8310373
@@ -421,8 +431,18 @@ Prefab:
         type: 2}
       propertyPath: roomPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 1246565766180816, guid: dacfec6a5056217489ae075c8bf44d0c,
+      objectReference: {fileID: 1957368638734360, guid: dacfec6a5056217489ae075c8bf44d0c,
         type: 2}
+    - target: {fileID: 114385006866228110, guid: 91e93fe8b66d2dc4a826935a3ea2c0ee,
+        type: 2}
+      propertyPath: currentRoom
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114385006866228110, guid: 91e93fe8b66d2dc4a826935a3ea2c0ee,
+        type: 2}
+      propertyPath: rooms.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114723874510259770, guid: 91e93fe8b66d2dc4a826935a3ea2c0ee, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 91e93fe8b66d2dc4a826935a3ea2c0ee, type: 2}
