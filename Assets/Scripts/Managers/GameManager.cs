@@ -51,7 +51,16 @@ public class GameManager : MonoBehaviour {
         OnChange += player.GetComponent<Player>().ChangeScene;
         OnChange(gameState);
     }
-	
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            print("pressed esc");
+            loadMainMenu();
+        }
+    }
+
     void InitGM()
     {
         ins = gameObject;
@@ -78,5 +87,21 @@ public class GameManager : MonoBehaviour {
     public static void loadOverworld()
     {
         SceneManager.LoadSceneAsync("Overworld");
+    }
+
+    public static void DeleteAll()
+    {
+        GameObject[] GameObjects = (FindObjectsOfType<GameObject>() as GameObject[]);
+
+        for (int i = 0; i < GameObjects.Length; i++)
+        {
+            Destroy(GameObjects[i]);
+        }
+    }
+
+    public static void loadMainMenu()
+    {
+        DeleteAll();
+        SceneManager.LoadScene("MainMenu");
     }
 }

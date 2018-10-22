@@ -6,14 +6,26 @@ public class PlayerController : MonoBehaviour {
 
     public float moveSpeed;
     public Rigidbody2D rb;
+    public Animator animator;
+    public float horizontalMove;
+    public float verticalMove;
 
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    private void OnDisable()
+    {
+        animator.SetFloat("Speed", 0);
+    }
+
+    // Update is called once per frame
+    void Update () {
+
+        horizontalMove = Input.GetAxisRaw("Horizontal") * moveSpeed;
+        verticalMove = Input.GetAxisRaw("Vertical") * moveSpeed;
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMove) + Mathf.Abs(verticalMove));
 		if (Input.GetAxisRaw("Horizontal") > 0.5f || Input.GetAxisRaw("Horizontal") < -0.5f)
         {
             rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * moveSpeed, rb.velocity.y);
