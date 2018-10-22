@@ -113,98 +113,86 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &554162824
+--- !u!1001 &553939316
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4062395273946400, guid: e8227077c9d151e47a2c9d145f7f7ba9, type: 2}
+    - target: {fileID: 4288590366236686, guid: edfe45dfcfc87754a9927208a96caed1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -3.68
       objectReference: {fileID: 0}
-    - target: {fileID: 4062395273946400, guid: e8227077c9d151e47a2c9d145f7f7ba9, type: 2}
+    - target: {fileID: 4288590366236686, guid: edfe45dfcfc87754a9927208a96caed1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.29
       objectReference: {fileID: 0}
-    - target: {fileID: 4062395273946400, guid: e8227077c9d151e47a2c9d145f7f7ba9, type: 2}
+    - target: {fileID: 4288590366236686, guid: edfe45dfcfc87754a9927208a96caed1, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4062395273946400, guid: e8227077c9d151e47a2c9d145f7f7ba9, type: 2}
+    - target: {fileID: 4288590366236686, guid: edfe45dfcfc87754a9927208a96caed1, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4062395273946400, guid: e8227077c9d151e47a2c9d145f7f7ba9, type: 2}
+    - target: {fileID: 4288590366236686, guid: edfe45dfcfc87754a9927208a96caed1, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4062395273946400, guid: e8227077c9d151e47a2c9d145f7f7ba9, type: 2}
+    - target: {fileID: 4288590366236686, guid: edfe45dfcfc87754a9927208a96caed1, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4062395273946400, guid: e8227077c9d151e47a2c9d145f7f7ba9, type: 2}
+    - target: {fileID: 4288590366236686, guid: edfe45dfcfc87754a9927208a96caed1, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4062395273946400, guid: e8227077c9d151e47a2c9d145f7f7ba9, type: 2}
+    - target: {fileID: 4288590366236686, guid: edfe45dfcfc87754a9927208a96caed1, type: 2}
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 212637923045567186, guid: e8227077c9d151e47a2c9d145f7f7ba9,
+    - target: {fileID: 212172485664457678, guid: edfe45dfcfc87754a9927208a96caed1,
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 31975c6dc61097a4c891b852ac311d3d,
+      objectReference: {fileID: 21300000, guid: b75b54064539d68479ae6a346ccb8c66,
         type: 3}
-    - target: {fileID: 1766855550230978, guid: e8227077c9d151e47a2c9d145f7f7ba9, type: 2}
-      propertyPath: m_Name
-      value: NWS
+    - target: {fileID: 4288590366236686, guid: edfe45dfcfc87754a9927208a96caed1, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 61736144266874638, guid: e8227077c9d151e47a2c9d145f7f7ba9,
-        type: 2}
-      propertyPath: m_Offset.x
-      value: 5.337557
+    - target: {fileID: 4288590366236686, guid: edfe45dfcfc87754a9927208a96caed1, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 61736144266874638, guid: e8227077c9d151e47a2c9d145f7f7ba9,
+    - target: {fileID: 4288590366236686, guid: edfe45dfcfc87754a9927208a96caed1, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 61366603863564110, guid: edfe45dfcfc87754a9927208a96caed1,
         type: 2}
-      propertyPath: m_Size.x
-      value: 7.092987
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 61366603863564110, guid: edfe45dfcfc87754a9927208a96caed1,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 60206669606992282, guid: edfe45dfcfc87754a9927208a96caed1,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 60206669606992282, guid: edfe45dfcfc87754a9927208a96caed1,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.29
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e8227077c9d151e47a2c9d145f7f7ba9, type: 2}
+  m_SourcePrefab: {fileID: 100100000, guid: edfe45dfcfc87754a9927208a96caed1, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &554162825 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1766855550230978, guid: e8227077c9d151e47a2c9d145f7f7ba9,
-    type: 2}
-  m_PrefabInternal: {fileID: 554162824}
---- !u!61 &554162826
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 554162825}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -5.3458624, y: 4.9068203}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 17.77, y: 10}
-    newSize: {x: 17.77, y: 10}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 7.0782757, y: 0.1863594}
-  m_EdgeRadius: 0
 --- !u!1 &605617236
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,7 +635,8 @@ Prefab:
         type: 2}
       propertyPath: roomPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1635302544595304, guid: dacfec6a5056217489ae075c8bf44d0c,
+        type: 2}
     - target: {fileID: 114385006866228110, guid: 91e93fe8b66d2dc4a826935a3ea2c0ee,
         type: 2}
       propertyPath: currentRoom
