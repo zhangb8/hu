@@ -252,7 +252,7 @@ MonoBehaviour:
   pc: {fileID: 114196881136042690}
   overWorldPosition: {x: -4.8, y: 0}
   battlePosition: {x: -5.05, y: 0.33}
-  overWorldScale: {x: 0.4717, y: 0.4717}
+  overWorldScale: {x: 0.3, y: 0.3}
   battleScale: {x: 0.9393, y: 0.9393}
 --- !u!212 &212172485664457678
 SpriteRenderer:
