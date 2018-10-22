@@ -9,11 +9,8 @@ public class CameraScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (GameManager.player != null)
-        {
-            player = GameManager.player;
-            offset = transform.position - new Vector3(0, 0, player.transform.position.z);
-        }
+        player = GameObject.FindGameObjectWithTag("player");
+        offset = transform.position - new Vector3(0, 0, player.transform.position.z);
 	}
 	
 	// Update is called once per frame

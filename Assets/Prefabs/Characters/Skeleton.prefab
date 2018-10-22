@@ -113,7 +113,7 @@ MonoBehaviour:
   overWorldPosition: {x: 5, y: 0.1577582}
   battlePosition: {x: 4.27, y: 0.43}
   overWorldScale: {x: 0, y: 0}
-  battleScale: {x: 10, y: 10}
+  battleScale: {x: 12, y: 12}
 --- !u!212 &212256545813964820
 SpriteRenderer:
   m_ObjectHideFlags: 1

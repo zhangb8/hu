@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Player : MonoBehaviour {
 
+    public static GameObject ins;
     public int maxHealth;
     public int health;
     public int maxMana;
@@ -17,9 +18,21 @@ public class Player : MonoBehaviour {
     public Vector2 battleScale;
 
     // Use this for initialization
+    private void Awake()
+    {
+        if (ins == null)
+        {
+            ins = gameObject;
+            DontDestroyOnLoad(ins);
+        }
+        else if (ins != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     void Start () {
         pc = GetComponent<PlayerController>();
-        DontDestroyOnLoad(this);        
     }
 	
 	// Update is called once per frame

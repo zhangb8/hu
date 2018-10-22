@@ -5,9 +5,6 @@ using UnityEngine;
 public class Room : MonoBehaviour {
     public List<GameObject> interactables;
     public List<GameObject> enemies;
-    public SpriteRenderer background;
-    public GameObject walls;
-
     public void Start()
     {
         InitRoom();
@@ -17,7 +14,6 @@ public class Room : MonoBehaviour {
     {
         InitInteractables();
         InitEnemies();
-        InitWall();
     }
 
     public void InitInteractables()
@@ -36,12 +32,5 @@ public class Room : MonoBehaviour {
 
         }
     }
-
-    public void InitWall()
-    {
-        GameObject something = Instantiate(walls, gameObject.transform) as GameObject;
-
-    }
-
 
 }
