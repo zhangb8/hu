@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 605617239}
   - component: {fileID: 605617238}
   - component: {fileID: 605617237}
+  - component: {fileID: 605617240}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -146,7 +147,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -161,7 +162,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -190,6 +191,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &605617240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 605617236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6656278e58750cf428e040f2ef2b5f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: {x: 0, y: 0, z: 0}
+  player: {fileID: 0}
 --- !u!114 &884532895 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114350255548733134, guid: 91e93fe8b66d2dc4a826935a3ea2c0ee,
@@ -508,7 +522,7 @@ Prefab:
     - target: {fileID: 114385006866228110, guid: 91e93fe8b66d2dc4a826935a3ea2c0ee,
         type: 2}
       propertyPath: roomPrefabs.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4128360267588840, guid: 91e93fe8b66d2dc4a826935a3ea2c0ee, type: 2}
       propertyPath: m_LocalPosition.x
@@ -555,7 +569,7 @@ Prefab:
         type: 2}
       propertyPath: roomPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 1635302544595304, guid: dacfec6a5056217489ae075c8bf44d0c,
+      objectReference: {fileID: 1454264766945836, guid: e2dbbf89cb08a514cb2dd7a2899471fa,
         type: 2}
     - target: {fileID: 114385006866228110, guid: 91e93fe8b66d2dc4a826935a3ea2c0ee,
         type: 2}
@@ -572,6 +586,17 @@ Prefab:
       propertyPath: playerPrefab
       value: 
       objectReference: {fileID: 1714961527525944, guid: 115f1829247941e49b2bb0222e9c60b8,
+        type: 2}
+    - target: {fileID: 114303340192833128, guid: 91e93fe8b66d2dc4a826935a3ea2c0ee,
+        type: 2}
+      propertyPath: overWorldCamera
+      value: 
+      objectReference: {fileID: 605617238}
+    - target: {fileID: 114385006866228110, guid: 91e93fe8b66d2dc4a826935a3ea2c0ee,
+        type: 2}
+      propertyPath: roomPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 1978812217143724, guid: 99cc84d03fc6329468bcf7c2b1700cdf,
         type: 2}
     m_RemovedComponents:
     - {fileID: 114723874510259770, guid: 91e93fe8b66d2dc4a826935a3ea2c0ee, type: 2}

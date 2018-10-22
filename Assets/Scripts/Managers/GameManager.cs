@@ -18,7 +18,8 @@ public class GameManager : MonoBehaviour {
 
     //OBJECTS 
     public GameObject playerPrefab;
-    public GameObject player;
+    public static GameObject player;
+    public Camera overWorldCamera;
 
     //EVENTS & DELEGATES
     public delegate void ChangedScene(string gs);
@@ -48,6 +49,8 @@ public class GameManager : MonoBehaviour {
         currentScene = SceneManager.GetActiveScene();
         gameState = currentScene.name;
         InstantiatePlayer();
+        overWorldCamera.GetComponent<CameraScript>().player = player;
+        overWorldCamera.GetComponent<CameraScript>().offset = overWorldCamera.transform.position - new Vector3(0, 0, player.transform.position.z);
         OnChange += player.GetComponent<Player>().ChangeScene;
         OnChange(gameState);
     }
