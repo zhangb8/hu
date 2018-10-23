@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour {
     //EVENTS & DELEGATES
     public delegate void ChangedScene(string gs);
     public static event ChangedScene OnChange;
+    public bool duplicate = false;
 
     private void Awake()
     {
@@ -33,6 +34,7 @@ public class GameManager : MonoBehaviour {
         }
         else if (ins != this)
         {
+            duplicate = true;
             Destroy(gameObject);
         }
     }
@@ -43,11 +45,11 @@ public class GameManager : MonoBehaviour {
         //Setting up events
         SceneManager.activeSceneChanged += GetScene;
         OnChange += mm.InitMap;
+        OnChange += player.GetComponent<Player>().ChangeScene;
 
         //Initailizing fields
         currentScene = SceneManager.GetActiveScene();
         gameState = currentScene.name;
-        OnChange += player.GetComponent<Player>().ChangeScene;
         OnChange(gameState);
     }
 

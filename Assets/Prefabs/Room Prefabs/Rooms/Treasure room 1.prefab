@@ -19,13 +19,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4752170122245672}
+  - component: {fileID: 114614009221639396}
   - component: {fileID: 212680727165624830}
   - component: {fileID: 61785477032351552}
   - component: {fileID: 61344759687502968}
   - component: {fileID: 61988809350921034}
   - component: {fileID: 61928741933030582}
   - component: {fileID: 61471645943935816}
-  - component: {fileID: 114614009221639396}
+  - component: {fileID: 61480839607350592}
   m_Layer: 0
   m_Name: Treasure room 1
   m_TagString: Untagged
@@ -95,6 +96,31 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 5.608513, y: 10}
+  m_EdgeRadius: 0
+--- !u!61 &61480839607350592
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1057904943643260}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 17.77, y: 10}
+    newSize: {x: 17.77, y: 10}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 17.77, y: 10}
   m_EdgeRadius: 0
 --- !u!61 &61785477032351552
 BoxCollider2D:
@@ -185,6 +211,10 @@ MonoBehaviour:
   interactables:
   - {fileID: 1042065695755090, guid: 8586b2d0753ea504197f9a99482ec998, type: 2}
   enemies: []
+  interactablePositions:
+  - {x: 0, y: 1, z: 0}
+  enemyPositions: []
+  sr: {fileID: 0}
 --- !u!212 &212680727165624830
 SpriteRenderer:
   m_ObjectHideFlags: 1

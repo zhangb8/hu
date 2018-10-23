@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 61592639635054560}
   - component: {fileID: 61004020050700272}
   - component: {fileID: 61813658239405912}
+  - component: {fileID: 61563914160112534}
   m_Layer: 0
   m_Name: Boss Room
   m_TagString: Untagged
@@ -95,6 +96,31 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 17.77, y: 0.18186092}
+  m_EdgeRadius: 0
+--- !u!61 &61563914160112534
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1569152782593522}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 17.77, y: 10}
+    newSize: {x: 17.77, y: 10}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 17.77, y: 10}
   m_EdgeRadius: 0
 --- !u!61 &61592639635054560
 BoxCollider2D:
@@ -185,6 +211,10 @@ MonoBehaviour:
   interactables: []
   enemies:
   - {fileID: 1186038501538776, guid: e2fba29f8d293b04f81964c08e80219c, type: 2}
+  interactablePositions: []
+  enemyPositions:
+  - {x: 0, y: 0, z: 0}
+  sr: {fileID: 0}
 --- !u!212 &212572445254701518
 SpriteRenderer:
   m_ObjectHideFlags: 1

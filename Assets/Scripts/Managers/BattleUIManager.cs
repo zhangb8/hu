@@ -27,6 +27,13 @@ public class BattleUIManager : MonoBehaviour {
         reshuffle.onClick.AddListener(bm.reshuffle);
     }
 
+    private void OnDestroy()
+    {
+        GameManager.OnChange -= StartBattle;
+        BattleManager.onBattleEnd -= EndBattle;
+
+    }
+
     //renders everything every frame (pretty bad for runtime)
     void Update()
     {

@@ -31,6 +31,15 @@ public class BattleManager : MonoBehaviour {
         StartBattle();
     }
 
+    private void OnDestroy()
+    {
+        Card.cardUsed -= onCardUse;
+        Card.cardDiscarded -= onCardDiscard;
+        onBattleEnd -= GameManager.loadOverworld;
+        onBattleEnd -= cm.ClearCards;
+
+    }
+
     public void StartBattle()
     {
         
