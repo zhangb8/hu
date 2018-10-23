@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 61329565814238008}
   - component: {fileID: 61758661085435460}
   - component: {fileID: 61959495121516520}
+  - component: {fileID: 114525513226904190}
   m_Layer: 0
   m_Name: bonfire room
   m_TagString: Untagged
@@ -196,6 +197,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.18914795, y: 9.967838}
   m_EdgeRadius: 0
+--- !u!114 &114525513226904190
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1181687030051056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f00e225bbe0a9d438f701d46c6d3e9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactables: []
+  enemies: []
 --- !u!212 &212126345988357940
 SpriteRenderer:
   m_ObjectHideFlags: 1
