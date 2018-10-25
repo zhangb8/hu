@@ -20,6 +20,31 @@ public class Enemy : Interactable {
         GameManager.loadBattle();
     }
 
+    private void FixedUpdate()
+    {
+        if (Player.ins != null)
+        {
+            LookAt2D (Player.ins.transform.position);
+        }
+    }
+
+    public void LookAt2D(Vector2 target)
+    {
+        Vector2 current = transform.position;
+        Vector2 direction = target - current;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        if (angle < 90f && angle > -90)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+        //transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+    }
+
+
     public void takeDamage(int dmg)
     {
         if (health - dmg < 0)
