@@ -9,7 +9,15 @@ public class InventoryManager : MonoBehaviour {
 
     private void Start()
     {
+        TreasureChest.treasureOpened += onTreasureOpened;
         getWeight();
+    }
+
+    void onTreasureOpened(GameObject treasure)
+    {
+        GameObject o = treasure;
+        inventory.Add(o);
+        print("Added a thing");
     }
 
     // adds up weight of all items, sets curweight to it

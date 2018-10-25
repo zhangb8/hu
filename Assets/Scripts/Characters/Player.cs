@@ -10,6 +10,7 @@ public class Player : MonoBehaviour {
     public int maxMana;
     public int mana;
     public int block;
+    public int level = 1;
     public bool takenDamage = false;
     public PlayerController pc;
     public Vector2 overWorldPosition;

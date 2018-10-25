@@ -59,3 +59,4 @@ MonoBehaviour:
   - {fileID: 1051564749690036, guid: 707d8d6e872ab5241ae5d001cf72a254, type: 2}
   sprite: {fileID: 0}
   weight: 2
+  level: 1

@@ -7,6 +7,7 @@ public class Item : MonoBehaviour {
     public List<GameObject> cards = new List<GameObject>();
     public SpriteRenderer sprite;
     public int weight;
+    public int level;
 
 	// Use this for initialization
 	void Start () {
